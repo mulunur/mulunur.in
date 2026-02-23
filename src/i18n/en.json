@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "music": "Music",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Taissia Kartamyshova",
+    "nickname": "mulünur",
+    "subtitle": "Programmer · Musician · Creative Developer",
+    "cta": "Explore My Work"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "I've been programming since age 14, starting with fractals and generative art. My journey includes 3D modeling, music production, and the intersection of technology and creativity.",
+    "music": "Music has been a passion since childhood. I studied classical piano in music school, transitioned to electric guitar, and now focus on jazz piano. I perform with my university jazz ensemble and compose original music.",
+    "album": "Currently working on my debut electronic music album.",
+    "passion": "I'm fascinated by the intersection of code and creativity—whether that's algorithms generating visual patterns or tools for music production."
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "programming": {
+      "title": "Programming",
+      "items": ["React", "TypeScript", "JavaScript", "Python", "Web Development"]
+    },
+    "design": {
+      "title": "3D & Design",
+      "items": ["3D Modeling", "Blender", "Generative Art", "Visual Design"]
+    },
+    "music": {
+      "title": "Music",
+      "items": ["Jazz Piano", "Electric Guitar", "Music Production", "Composition", "Fortepiano"]
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "projects": [
+      {
+        "name": "Fractal Generator",
+        "description": "Interactive web-based fractal visualization tool built with Canvas API",
+        "tags": ["JavaScript", "Canvas", "Generative Art"]
+      },
+      {
+        "name": "3D Scene Visualizer",
+        "description": "WebGL-based 3D modeling viewer with custom shader effects",
+        "tags": ["Three.js", "GLSL", "3D Graphics"]
+      },
+      {
+        "name": "Music Production Suite",
+        "description": "Web audio tools for music composition and synthesis",
+        "tags": ["Web Audio API", "React", "Music Tech"]
+      }
+    ]
+  },
+  "music": {
+    "title": "Music",
+    "subtitle": "Original compositions and experimental electronic music",
+    "album": "Debut Album Coming Soon",
+    "tracks": [
+      {
+        "name": "Digital Dreams",
+        "artist": "mulünur",
+        "duration": "3:45"
+      },
+      {
+        "name": "Jazz Algorithm",
+        "artist": "mulünur",
+        "duration": "4:12"
+      },
+      {
+        "name": "Neon Reflections",
+        "artist": "mulünur",
+        "duration": "3:28"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "email": "contact@mulunur.in",
+    "emailLabel": "Email",
+    "social": "Social Links",
+    "message": "Feel free to reach out about collaborations, music projects, or just to chat about programming and music!"
+  },
+  "footer": {
+    "copyright": "© 2026 Taissia Kartamyshova. All rights reserved.",
+    "links": {
+      "github": "GitHub",
+      "twitter": "Twitter",
+      "instagram": "Instagram"
+    }
+  },
+  "language": "English"
+}

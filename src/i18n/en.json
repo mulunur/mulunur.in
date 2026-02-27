@@ -8,7 +8,8 @@
     "contact": "Contact"
   },
   "home": {
-    "title": "Taissia Kartamyshova",
+    "moto": "Welcome to my portfolio!",
+    "title": "Taisia Kartamysheva",
     "nickname": "mulünur",
     "subtitle": "Programmer · Musician · Creative Developer",
     "cta": "Explore My Work"
@@ -79,13 +80,13 @@
   },
   "contact": {
     "title": "Get In Touch",
-    "email": "contact@mulunur.in",
+    "email": "tayisiak@gmail.com",
     "emailLabel": "Email",
     "social": "Social Links",
     "message": "Feel free to reach out about collaborations, music projects, or just to chat about programming and music!"
   },
   "footer": {
-    "copyright": "© 2026 Taissia Kartamyshova. All rights reserved.",
+    "copyright": "© 2026 Taisia Kartamysheva. All rights reserved.",
     "links": {
       "github": "GitHub",
       "twitter": "Twitter",

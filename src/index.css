@@ -12,8 +12,9 @@ html {
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #111827;
-  color: #e5e7eb;
+  background-color: lab(100% 0.01 -0.01);
+  /*color: #e5e7eb;*/
+  color: #000000;
 }
 
 /* Custom scrollbar */
@@ -42,6 +43,6 @@ a, button {
 
 /* Text selection */
 ::selection {
-  background-color: #8b3dff;
+  background-color: #008c38db;
   color: #ffffff;
 }

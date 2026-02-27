@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-6">
           <div className="inline-block px-4 py-1 bg-primary-600/20 border border-primary-500/30 rounded-full">
-            <span className="text-primary-400 text-sm font-medium">Welcome to my portfolio</span>
+            <span className="text-primary-400 text-sm font-medium">{t("home.moto")}</span>
           </div>
         </div>
 

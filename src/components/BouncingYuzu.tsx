@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 
 export default function BouncingYuzu() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const velocityRef = useRef({ x: 2, y: 2 });
+  const [position, setPosition] = useState({ x: 40, y: 0 });
+  const velocityRef = useRef({ x: 1, y: 1 });
   const animationFrameRef = useRef<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -12,7 +12,7 @@ export default function BouncingYuzu() {
         if (!containerRef.current) return prevPos;
 
         const container = containerRef.current;
-        const imageSize = 100; // 100px image
+        const imageSize = 90; // 100px image
         const maxX = container.clientWidth - imageSize;
         const maxY = container.clientHeight - imageSize;
 
@@ -64,7 +64,7 @@ export default function BouncingYuzu() {
           alt="yuzu"
           className="w-24 h-24 object-contain select-none"
           style={{
-            filter: 'drop-shadow(0 20px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2))',
+            filter: 'drop-shadow(0 5px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2))',
           }}
         />
       </div>

@@ -7,8 +7,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 const MESSAGES_DIR = path.join(__dirname, 'messages');
+
+// Определяем пути для статических файлов
+const DIST_DIR = path.join(__dirname, 'dist');
 
 // Middleware
 app.use(express.json());
@@ -18,6 +22,11 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   next();
 });
+
+// В production - подаем статические файлы фронтенда
+if (NODE_ENV === 'production' && fs.existsSync(DIST_DIR)) {
+  app.use(express.static(DIST_DIR));
+}
 
 // Создаем папку messages, если её нет
 if (!fs.existsSync(MESSAGES_DIR)) {
@@ -108,7 +117,15 @@ app.get('/api/messages/:filename', (req, res) => {
   }
 });
 
+// SPA fallback - отправляем index.html для всех остальных маршрутов
+app.get('*', (req, res) => {
+  if (NODE_ENV === 'production' && fs.existsSync(DIST_DIR)) {
+    res.sendFile(path.join(DIST_DIR, 'index.html'));
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Сервер запущен на http://localhost:${PORT}`);
+  console.log(`Режим: ${NODE_ENV}`);
   console.log(`Сообщения сохраняются в папке: ${MESSAGES_DIR}`);
 });

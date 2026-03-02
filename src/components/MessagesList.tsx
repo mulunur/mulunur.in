@@ -1,6 +1,15 @@
 import { useEffect, useState } from 'react';
 
-const API_URL = 'http://localhost:3001/api';
+// Определяем API URL на основе окружения
+const getApiUrl = () => {
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+    return 'http://localhost:3001/api';
+  }
+  // Для production используем текущий домен
+  return '/api';
+};
+
+const API_URL = getApiUrl();
 
 interface Message {
   filename: string;

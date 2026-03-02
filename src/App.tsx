@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BouncingYuzu from './components/BouncingYuzu';
+import PoemsModal, { getRandomPoem } from './components/PoemsModal';
 import Home from './pages/Home';
 import About from './pages/About';
 import Skills from './pages/Skills';
@@ -21,11 +22,11 @@ function AppContent() {
   }, [currentColor]);
 
   return (
+    
     <div 
       className="bg-dark-900 text-dark-100 min-h-screen flex flex-col cursor-pointer"
       onClick={changeColor}
     >
-      <BouncingYuzu />
       <Header />
       <div className="flex-1">
         <Routes>
@@ -43,12 +44,29 @@ function AppContent() {
 }
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPoem, setCurrentPoem] = useState('');
+
+  const handleYuzuClick = () => {
+    console.log('Yuzu clicked!');
+    setCurrentPoem(getRandomPoem());
+    setIsModalOpen(true);
+  };
+
   return (
+    <div>
       <Router>
         <ColorProvider>
+          <PoemsModal 
+            isOpen={isModalOpen} 
+            onClose={() => setIsModalOpen(false)} 
+            poem={currentPoem}
+          />
           <AppContent />
         </ColorProvider>
       </Router>
+      <BouncingYuzu onYuzuClick={handleYuzuClick} />
+    </div>
   );
 }
 

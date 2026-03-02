@@ -1,10 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 
-export default function BouncingYuzu() {
+interface BouncingYuzuProps {
+  onYuzuClick: () => void;
+}
+
+export default function BouncingYuzu({ onYuzuClick }: BouncingYuzuProps) {
   const [position, setPosition] = useState({ x: 40, y: 0 });
   const velocityRef = useRef({ x: 1, y: 1 });
   const animationFrameRef = useRef<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleYuzuClick = (e: React.MouseEvent) => {
+    console.log("Yuzu clicked!");
+    e.stopPropagation();
+    onYuzuClick();
+  };
 
   useEffect(() => {
     const animate = () => {
@@ -48,7 +58,7 @@ export default function BouncingYuzu() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 pointer-events-none overflow-hidden"
+      className="fixed inset-0 pointer-events-none overflow-hidden z-50"
     >
       <div
         style={{
@@ -62,10 +72,11 @@ export default function BouncingYuzu() {
         <img
           src="/images/yuzu.png"
           alt="yuzu"
-          className="w-24 h-24 object-contain select-none"
+          className="w-24 h-24 object-contain select-none cursor-pointer pointer-events-auto hover:brightness-110 transition-all"
           style={{
             filter: 'drop-shadow(0 5px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2))',
           }}
+          onClick={handleYuzuClick}
         />
       </div>
     </div>

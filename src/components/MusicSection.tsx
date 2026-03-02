@@ -7,8 +7,9 @@ export default function MusicSection() {
   const tracks = musicData.tracks;
   const [playing, setPlaying] = useState<number | null>(null);
 
+  //  max-w-6xl mx-auto px-4 sm:px-6 lg:px-8
   return (
-    <section className="py-20 bg-dark-800">
+    <section className="flex items-center justify-center bg-dark-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

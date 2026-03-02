@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import BouncingYuzu from './components/BouncingYuzu';
 import Home from './pages/Home';
 import About from './pages/About';
 import Skills from './pages/Skills';
@@ -16,6 +17,7 @@ function App() {
     <HelmetProvider>
       <Router>
         <div className="bg-dark-900 text-dark-100 min-h-screen flex flex-col">
+          <BouncingYuzu />
           <Header />
           <div className="flex-1">
             <Routes>

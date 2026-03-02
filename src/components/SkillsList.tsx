@@ -13,7 +13,7 @@ export default function SkillsList() {
 
   return (
     <section className="py-20 bg-dark-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex items-center justify-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center">
           {skillsData.title}
         </h2>

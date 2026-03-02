@@ -13,7 +13,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-6">
-          <div className="inline-block px-4 py-1 bg-primary-600/20 border border-primary-500/30 rounded-full">
+          <div className="backdrop-blur inline-block px-4 py-1 bg-primary-600/20 border border-primary-500/30 rounded-full">
             <span className="text-primary-400 text-sm font-medium">{t("home.moto")}</span>
           </div>
         </div>
@@ -33,13 +33,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
           <Link
             to="/portfolio"
-            className="px-8 py-3 border border-primary-500 text-primary-400 hover:bg-primary-700 font-semibold rounded transition-colors"
+            className="backdrop-blur px-8 py-3 border border-primary-500 text-primary-400 hover:bg-primary-700 font-semibold rounded transition-colors"
           >
             {t('home.cta')}
           </Link>
           <Link
             to="/contact"
-            className="flex border border-primary-500 text-primary-400 hover:bg-primary-600/10 font-semibold rounded transition-colors"
+            className="backdrop-blur flex items-center justify-center border border-primary-500 text-primary-400 hover:bg-primary-600/10 font-semibold rounded transition-colors"
           >
             {t('nav.contact')}
           </Link>

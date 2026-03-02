@@ -1,6 +1,6 @@
 # mulünur - Personal Portfolio Website
 
-A modern, bilingual (English/Russian) portfolio website for Taissia Kartamyshova (nickname: mulünur), featuring programming projects, 3D modeling work, and original music.
+A bilingual (English/Russian) portfolio website for Taisia Kartamyshеva (nickname: mulünur), featuring biography facts, programming projects, 3D modeling work, and original music.
 
 ## Features
 
@@ -22,7 +22,6 @@ A modern, bilingual (English/Russian) portfolio website for Taissia Kartamyshova
 - **Bundler**: Vite
 - **Routing**: React Router v6
 - **Internationalization**: react-i18next
-- **SEO/Head**: React Helmet Async
 
 ## Project Structure
 

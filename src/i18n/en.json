@@ -11,7 +11,7 @@
     "moto": "Welcome to my portfolio!",
     "title": "Taisia Kartamysheva",
     "nickname": "mulünur",
-    "subtitle": "Programmer · Musician · Creative Developer",
+    "subtitle": "Programmer · Musician · Independent researcher",
     "cta": "Explore My Work"
   },
   "about": {
@@ -19,13 +19,15 @@
     "bio": "I've been programming since age 14, starting with fractals and generative art. My journey includes 3D modeling, music production, and the intersection of technology and creativity.",
     "music": "Music has been a passion since childhood. I studied classical piano in music school, transitioned to electric guitar, and now focus on jazz piano. I perform with my university jazz ensemble and compose original music.",
     "album": "Currently working on my debut electronic music album.",
-    "passion": "I'm fascinated by the intersection of code and creativity—whether that's algorithms generating visual patterns or tools for music production."
+    "passion": "I'm fascinated by the intersection of code and creativity—whether that's algorithms generating visual patterns or tools for music production.",
+    "journey": "Journey",
+    "timeline": ""
   },
   "skills": {
     "title": "Skills & Expertise",
     "programming": {
       "title": "Programming",
-      "items": ["React", "TypeScript", "JavaScript", "Python", "Web Development"]
+      "items": ["React", "TypeScript", "JavaScript", "Python", "Web Development", "System Programming"]
     },
     "design": {
       "title": "3D & Design",
@@ -45,14 +47,14 @@
         "tags": ["JavaScript", "Canvas", "Generative Art"]
       },
       {
-        "name": "3D Scene Visualizer",
+        "name": "ASCII Generator",
         "description": "WebGL-based 3D modeling viewer with custom shader effects",
-        "tags": ["Three.js", "GLSL", "3D Graphics"]
+        "tags": ["Generative Art"]
       },
       {
-        "name": "Music Production Suite",
-        "description": "Web audio tools for music composition and synthesis",
-        "tags": ["Web Audio API", "React", "Music Tech"]
+        "name": "Music functions generator",
+        "description": "Synthesis from waveforms of mathematical functions",
+        "tags": ["Web Audio API", "Music Tech"]
       }
     ]
   },
@@ -60,19 +62,20 @@
     "title": "Music",
     "subtitle": "Original compositions and experimental electronic music",
     "album": "Debut Album Coming Soon",
+    "about": "I'm currently working on my debut album, blending electronic production with jazz influences and live instrumentation. The project explores possibility of experimental pop music.",
     "tracks": [
       {
-        "name": "Digital Dreams",
+        "name": "Snail on my hand",
         "artist": "mulünur",
         "duration": "3:45"
       },
       {
-        "name": "Jazz Algorithm",
+        "name": "Waikru",
         "artist": "mulünur",
         "duration": "4:12"
       },
       {
-        "name": "Neon Reflections",
+        "name": "My friends",
         "artist": "mulünur",
         "duration": "3:28"
       }
@@ -86,11 +89,9 @@
     "message": "Feel free to reach out about collaborations, music projects, or just to chat about programming and music!"
   },
   "footer": {
-    "copyright": "© 2026 Taisia Kartamysheva. All rights reserved.",
+    "copyright": "© 2026 Taisia Kartamysheva.",
     "links": {
-      "github": "GitHub",
-      "twitter": "Twitter",
-      "instagram": "Instagram"
+      "github": "GitHub"
     }
   },
   "language": "English"

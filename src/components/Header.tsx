@@ -8,7 +8,7 @@ export default function Header() {
   const location = useLocation();
 
   const toggleLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'ru' : 'en';
+    const newLang = i18n.language === 'ru' ? 'en' : 'ru';
     i18n.changeLanguage(newLang);
     localStorage.setItem('language', newLang);
   };

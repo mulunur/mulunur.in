@@ -9,7 +9,7 @@ export default function PortfolioGrid() {
   return (
     <section className="flex items-center justify-center py-20 bg-dark-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
           {portfolioData.title}
         </h2>
 
@@ -28,7 +28,7 @@ export default function PortfolioGrid() {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">
+                <h3 className="text-xl font-semibold mb-2">
                   {project.name}
                 </h3>
                 <p className="text-dark-300 text-sm mb-4">

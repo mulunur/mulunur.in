@@ -13,7 +13,7 @@ export default function MusicSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             {musicData.title}
           </h2>
           <p className="text-dark-300 text-lg mb-4">
@@ -37,7 +37,7 @@ export default function MusicSection() {
                 {/* Play Button */}
                 <button
                   onClick={() => setPlaying(playing === index ? null : index)}
-                  className="flex-shrink-0 w-12 h-12 bg-primary-600 hover:bg-primary-700 text-white rounded-full flex items-center justify-center transition-colors"
+                  className="flex-shrink-0 w-12 h-12 bg-primary-600 hover:bg-primary-700 rounded-full flex items-center justify-center transition-colors"
                 >
                   {playing === index ? (
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -52,7 +52,7 @@ export default function MusicSection() {
 
                 {/* Track Info */}
                 <div className="flex-1">
-                  <h4 className="text-lg font-semibold text-white">
+                  <h4 className="text-lg font-semibold">
                     {track.name}
                   </h4>
                   <p className="text-dark-400 text-sm">

@@ -4,16 +4,16 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-dark-900 border-t border-dark-700 mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className="relative bg-dark-900 border-t border-dark-700 mt-20">
+      <div className="px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
           {/* Brand */}
           <div>
             <h3 className="text-xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
               mulünur
             </h3>
             <p className="mt-2 text-dark-400 text-sm">
-              Programmer · Musician · Creative Developer
+              Programmer · Musician · Independent Researcher
             </p>
           </div>
 
@@ -35,12 +35,13 @@ export default function Footer() {
           </div>
 
           {/* Social Links */}
-          <div>
+          <div className='grid grid-cols-2'>
+            <div>
             <h4 className="text-dark-200 font-semibold mb-4">{t('footer.links.github')}</h4>
             <ul className="space-y-2 text-sm text-dark-400">
               <li>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/mulunur"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary-400 transition-colors"
@@ -50,7 +51,24 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          
+          <div>
+            <h4 className="text-dark-200 font-semibold mb-4">{t('footer.links.telegram')}</h4>
+            <ul className="space-y-2 text-sm text-dark-400">
+              <li>
+                <a
+                  href="https://t.me/anthropocene_angel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-400 transition-colors"
+                >
+                  {t('footer.links.telegram')}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+          </div>
 
         <div className="border-t border-dark-700 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-dark-400">
           <p>{t('footer.copyright')}</p>
@@ -64,6 +82,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <img className="bottom-0 h-40 left-1/2 -translate-x-1/2" src={'/images/rainbowSpark.png'} alt="Company Logo" />
     </footer>
   );
 }

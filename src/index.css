@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --text-color: #000000;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +18,20 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   background-color: lab(100% 0.01 -0.01);
   /*color: #e5e7eb;*/
-  color: #000000;
+  color: var(--text-color);
+}
+
+/* Apply color to text and borders */
+body, body * {
+  color: var(--text-color) !important;
+  border-color: var(--text-color) !important;
+}
+
+/* Preserve specific colors where needed (but allow text color override) */
+body .bg-dark-900, 
+body .bg-dark-800,
+body .text-dark-100 {
+  color: var(--text-color) !important;
 }
 
 /* Custom scrollbar */

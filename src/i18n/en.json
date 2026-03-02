@@ -11,17 +11,29 @@
     "moto": "Welcome to my portfolio!",
     "title": "Taisia Kartamysheva",
     "nickname": "mulünur",
-    "subtitle": "Programmer · Musician · Independent researcher",
+    "subtitle": "Programmer · Musician · Researcher",
     "cta": "Explore My Work"
   },
   "about": {
     "title": "About Me",
+    "titleProgramming": "Programming",
     "bio": "I've been programming since age 14, starting with fractals and generative art. My journey includes 3D modeling, music production, and the intersection of technology and creativity.",
+    "titleMusic": "Music",
     "music": "Music has been a passion since childhood. I studied classical piano in music school, transitioned to electric guitar, and now focus on jazz piano. I perform with my university jazz ensemble and compose original music.",
+    "titleCurrentProject": "CurrentProject",
     "album": "Currently working on my debut electronic music album.",
     "passion": "I'm fascinated by the intersection of code and creativity—whether that's algorithms generating visual patterns or tools for music production.",
     "journey": "Journey",
-    "timeline": ""
+    "timeline": [
+      { "year": "2006", "title": "Started at age 5", "desc": "Vocal and choir lessons at music school"},
+      { "year": "2010", "title": "Age 9", "desc": "Started piano lessons and tennis"},
+      { "year": "2015", "title": "First Programs", "desc": "Explored beauty of programming and math" },
+      { "year": "2016", "title": "Electric Guitar", "desc": "Transitioned to electric guitar" },
+      { "year": "2017", "title": "Art School", "desc": "Transitioned from tennis to art school, studing paintings" },
+      { "year": "2019", "title": "University", "desc": "Started studying Computer Science at Russian Technological University (Moscow Institute of Radio, Electronics and Automatics" },
+      { "year": "2022", "title": "First full time job", "desc": "Started working as a software developer at Main Science-Informational-Computational Centre (GNIVC)" },
+      { "year": "2024", "title": "Music", "desc": "Working on debut music album" }
+    ]
   },
   "skills": {
     "title": "Skills & Expertise",
@@ -36,7 +48,8 @@
     "music": {
       "title": "Music",
       "items": ["Jazz Piano", "Electric Guitar", "Music Production", "Composition", "Fortepiano"]
-    }
+    },
+    "technologicalStack": "Technological Stack"
   },
   "portfolio": {
     "title": "Portfolio",
@@ -89,6 +102,7 @@
     "message": "Feel free to reach out about collaborations, music projects, or just to chat about programming and music!"
   },
   "footer": {
+    "brandDescription": "Programmer · Musician · Researcher",
     "copyright": "© 2026 Taisia Kartamysheva.",
     "links": {
       "github": "GitHub"

@@ -1,7 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
-const API_URL = 'http://localhost:3001/api';
+// Определяем API URL на основе окружения
+const getApiUrl = () => {
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+    return 'http://localhost:3001/api';
+  }
+  // Для production используем текущий домен
+  return '/api';
+};
+
+const API_URL = getApiUrl();
 
 export default function ContactSection() {
   const { t } = useTranslation();
@@ -34,7 +43,7 @@ export default function ContactSection() {
         throw new Error(errorData.error || 'Ошибка при отправке сообщения');
       }
 
-      const result = await response.json();
+      //const result = await response.json();
       alert('Спасибо за ваше сообщение! Скоро я его прочитаю.');
       setFormData({ name: '', email: '', message: '' });
     } catch (err) {

@@ -13,7 +13,7 @@ export default function AboutCard() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Left Column - Programming */}
           <div className="p-8 bg-dark-800 rounded-lg border border-dark-700 hover:border-primary-500/50 transition-colors">
-            <h3 className="text-2xl font-semibold text-primary-400 mb-4">Programming</h3>
+            <h3 className="text-2xl font-semibold text-primary-400 mb-4">{t("about.titleProgramming")}</h3>
             <p className="text-dark-300 leading-relaxed">
               {t('about.bio')}
             </p>
@@ -22,14 +22,14 @@ export default function AboutCard() {
           {/* Right Column - Music */}
           <div className="space-y-6">
             <div className="p-8 bg-dark-800 rounded-lg border border-dark-700 hover:border-primary-500/50 transition-colors">
-              <h3 className="text-2xl font-semibold text-primary-400 mb-4">Music</h3>
+              <h3 className="text-2xl font-semibold text-primary-400 mb-4">{t("about.titleMusic")}</h3>
               <p className="text-dark-300 leading-relaxed">
                 {t('about.music')}
               </p>
             </div>
 
             <div className="p-8 bg-dark-800 rounded-lg border border-dark-700 hover:border-primary-500/50 transition-colors">
-              <h3 className="text-xl font-semibold text-primary-400 mb-3">Current Project</h3>
+              <h3 className="text-xl font-semibold text-primary-400 mb-3">{t("about.titleCurrentProject")}</h3>
               <p className="text-dark-300">
                 {t('about.album')}
               </p>

@@ -13,7 +13,7 @@ export default function Footer() {
               mulünur
             </h3>
             <p className="mt-2 text-dark-400 text-sm">
-              Programmer · Musician · Independent Researcher
+              {t('footer.brandDescription')}
             </p>
           </div>
 

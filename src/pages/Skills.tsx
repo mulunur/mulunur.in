@@ -10,7 +10,7 @@ export default function Skills() {
       <section className="flex items-center justify-center py-20 bg-dark-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-12">
-            Technical Stack
+            {t('skills.technologicalStack')}
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 ">

@@ -9,7 +9,7 @@
     "contact": "Contact"
   },
   "home": {
-    "moto": "Welcome to my portfolio!",
+    "moto": "Welcome to my portfolio! (in development 🔜)",
     "title": "Taisia Kartamysheva",
     "nickname": "mulünur",
     "subtitle": "Programmer · Musician · Researcher",
@@ -76,24 +76,7 @@
     "title": "Music",
     "subtitle": "Original compositions and experimental electronic music",
     "album": "Debut Album Coming Soon",
-    "about": "I'm currently working on my debut album, blending electronic production with jazz influences and live instrumentation. The project explores possibility of experimental pop music.",
-    "tracks": [
-      {
-        "name": "Snail on my hand",
-        "artist": "mulünur",
-        "duration": "3:45"
-      },
-      {
-        "name": "Waikru",
-        "artist": "mulünur",
-        "duration": "4:12"
-      },
-      {
-        "name": "My friends",
-        "artist": "mulünur",
-        "duration": "3:28"
-      }
-    ]
+    "about": "I'm currently working on my debut album, blending electronic production with jazz influences and live instrumentation. The project explores possibility of experimental pop music."
   },
   "cv": {
     "title": "CV",

@@ -6,7 +6,7 @@ interface BouncingYuzuProps {
 
 export default function BouncingYuzu({ onYuzuClick }: BouncingYuzuProps) {
   const [position, setPosition] = useState({ x: 40, y: 0 });
-  const velocityRef = useRef({ x: 1, y: 1 });
+  const velocityRef = useRef({ x: 0.5, y: 0.5 });
   const animationFrameRef = useRef<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -72,7 +72,7 @@ export default function BouncingYuzu({ onYuzuClick }: BouncingYuzuProps) {
         <img
           src="/images/yuzu.png"
           alt="yuzu"
-          className="w-24 h-24 object-contain select-none cursor-pointer pointer-events-auto hover:brightness-110 transition-all"
+          className="w-20 h-20 object-contain select-none cursor-pointer pointer-events-auto hover:brightness-110 transition-all"
           style={{
             filter: 'drop-shadow(0 5px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2))',
           }}

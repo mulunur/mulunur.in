@@ -25,8 +25,8 @@ app.use((req, res, next) => {
   next();
 });
 
-// В production - подаем статические файлы фронтенда
-if (NODE_ENV === 'production' && fs.existsSync(DIST_DIR)) {
+// Подаем статические файлы фронтенда из папки dist
+if (fs.existsSync(DIST_DIR)) {
   app.use(express.static(DIST_DIR));
 }
 
@@ -97,6 +97,30 @@ app.get('/api/messages', (req, res) => {
   }
 });
 
+// GET endpoint - получение списка аудиофайлов
+app.get('/api/audio-files', (req, res) => {
+  try {
+    const AUDIO_DIR = path.join(DIST_DIR, 'audio');
+    
+    if (!fs.existsSync(AUDIO_DIR)) {
+      return res.json([]);
+    }
+
+    const files = fs.readdirSync(AUDIO_DIR)
+      .filter(file => /\.(mp3|wav|ogg|m4a)$/i.test(file))
+      .map(file => ({
+        filename: file,
+        path: `/audio/${file}`,
+        name: file.replace(/\.(mp3|wav|ogg|m4a)$/i, '')
+      }));
+
+    res.json(files);
+  } catch (error) {
+    console.error('Ошибка при чтении аудиофайлов:', error);
+    res.status(500).json({ error: 'Ошибка сервера' });
+  }
+});
+
 // GET endpoint - получение одного сообщения
 app.get('/api/messages/:filename', (req, res) => {
   try {
@@ -121,8 +145,11 @@ app.get('/api/messages/:filename', (req, res) => {
 
 // SPA fallback - отправляем index.html для всех остальных маршрутов
 app.get('*', (req, res) => {
-  if (NODE_ENV === 'production' && fs.existsSync(DIST_DIR)) {
-    res.sendFile(path.join(DIST_DIR, 'index.html'));
+  const indexPath = path.join(DIST_DIR, 'index.html');
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.status(404).send('index.html not found');
   }
 });
 

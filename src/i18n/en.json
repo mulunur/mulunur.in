@@ -5,6 +5,7 @@
     "skills": "Skills",
     "portfolio": "Portfolio",
     "music": "Music",
+    "cv": "CV",
     "contact": "Contact"
   },
   "home": {
@@ -93,6 +94,10 @@
         "duration": "3:28"
       }
     ]
+  },
+  "cv": {
+    "title": "CV",
+    "downloadLabel": "Download PDF"
   },
   "contact": {
     "title": "Get In Touch",

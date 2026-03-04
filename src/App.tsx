@@ -9,6 +9,7 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Portfolio from './pages/Portfolio';
 import Music from './pages/Music';
+import CV from './pages/CV';
 import Contact from './pages/Contact';
 import { ColorProvider, useColor } from './context/ColorContext';
 import './i18n/i18n';
@@ -35,6 +36,7 @@ function AppContent() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/music" element={<Music />} />
+          <Route path="/cv" element={<CV />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>

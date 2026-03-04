@@ -21,6 +21,7 @@ export default function Header() {
     { path: '/skills', label: t('nav.skills') },
     { path: '/portfolio', label: t('nav.portfolio') },
     { path: '/music', label: t('nav.music') },
+    { path: '/cv', label: t('nav.cv') },
     { path: '/contact', label: t('nav.contact') },
   ];
 

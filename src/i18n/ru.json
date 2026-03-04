@@ -5,6 +5,7 @@
     "skills": "Навыки",
     "portfolio": "Портфолио",
     "music": "Музыка",
+    "cv": "CV",
     "contact": "Контакты"
   },
   "home": {
@@ -93,6 +94,10 @@
         "duration": "3:28"
       }
     ]
+  },
+  "cv": {
+    "title": "CV",
+    "downloadLabel": "Скачать PDF"
   },
   "contact": {
     "title": "Свяжитесь со мной",

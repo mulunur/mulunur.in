@@ -1,6 +1,7 @@
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
+import https from 'https';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -8,6 +9,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const HTTPS_PORT = process.env.HTTPS_PORT || 3443;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const MESSAGES_DIR = path.join(__dirname, 'messages');
 
@@ -124,8 +126,27 @@ app.get('*', (req, res) => {
   }
 });
 
+// Запуск HTTP сервера
 app.listen(PORT, () => {
-  console.log(`Сервер запущен на http://localhost:${PORT}`);
+  console.log(`HTTP сервер запущен на http://localhost:${PORT}`);
   console.log(`Режим: ${NODE_ENV}`);
   console.log(`Сообщения сохраняются в папке: ${MESSAGES_DIR}`);
 });
+
+// Запуск HTTPS сервера (если доступны сертификаты)
+const certPath = process.env.CERT_PATH || '/etc/letsencrypt/live/mulunur.in/fullchain.pem';
+const keyPath = process.env.KEY_PATH || '/etc/letsencrypt/live/mulunur.in/privkey.pem';
+
+if (fs.existsSync(certPath) && fs.existsSync(keyPath)) {
+  const options = {
+    cert: fs.readFileSync(certPath),
+    key: fs.readFileSync(keyPath)
+  };
+
+  https.createServer(options, app).listen(HTTPS_PORT, () => {
+    console.log(`HTTPS сервер запущен на https://localhost:${HTTPS_PORT}`);
+  });
+} else if (NODE_ENV === 'production') {
+  console.warn('⚠️  HTTPS сертификаты не найдены. Установите Let\'s Encrypt сертификаты для безопасного подключения.');
+  console.warn(`Ожидаемые пути: ${certPath} и ${keyPath}`);
+}

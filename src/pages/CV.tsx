@@ -9,8 +9,8 @@ export default function CV() {
     ? '/cv/CV - Taisia Kartamysheva-RU.png' 
     : '/cv/CV - Taisia Kartamysheva-EN.png';
   const cvFile = isRussian 
-    ? '/CV-Kartamysheva-RU.pdf' 
-    : '/CV-Kartamysheva-EN.pdf';
+    ? '/cv/CV-Kartamysheva-RU.pdf' 
+    : '/cv/CV-Kartamysheva-EN.pdf';
   const cvFileName = isRussian
     ? 'CV - Картамышева Таисия.pdf'
     : 'CV - Taisia Kartamysheva.pdf';

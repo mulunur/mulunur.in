@@ -1,14 +1,16 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface BouncingYuzuProps {
   onYuzuClick: () => void;
 }
 
 export default function BouncingYuzu({ onYuzuClick }: BouncingYuzuProps) {
-  const [position, setPosition] = useState({ x: 40, y: 0 });
-  const velocityRef = useRef({ x: 0.5, y: 0.5 });
-  const animationFrameRef = useRef<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const yuzuRef = useRef<HTMLDivElement>(null);
+  const posRef = useRef({ x: 40, y: 0 });
+  const velocityRef = useRef({ x: 0.75, y: 0.75 });
+  const boundsRef = useRef({ maxX: 0, maxY: 0 });
+  const animationFrameRef = useRef<number | null>(null);
 
   const handleYuzuClick = (e: React.MouseEvent) => {
     console.log("Yuzu clicked!");
@@ -17,31 +19,52 @@ export default function BouncingYuzu({ onYuzuClick }: BouncingYuzuProps) {
   };
 
   useEffect(() => {
+    const IMAGE_SIZE_PX = 80; // matches `w-20 h-20` (5rem = 80px)
+
+    const updateBounds = () => {
+      const container = containerRef.current;
+      if (!container) return;
+
+      boundsRef.current.maxX = Math.max(0, container.clientWidth - IMAGE_SIZE_PX);
+      boundsRef.current.maxY = Math.max(0, container.clientHeight - IMAGE_SIZE_PX);
+    };
+
+    updateBounds();
+
+    let resizeObserver: ResizeObserver | null = null;
+    if (containerRef.current && typeof ResizeObserver !== 'undefined') {
+      resizeObserver = new ResizeObserver(() => updateBounds());
+      resizeObserver.observe(containerRef.current);
+    }
+
     const animate = () => {
-      setPosition((prevPos) => {
-        if (!containerRef.current) return prevPos;
+      const container = containerRef.current;
+      const yuzuEl = yuzuRef.current;
+      if (!container || !yuzuEl) return;
 
-        const container = containerRef.current;
-        const imageSize = 90; // 100px image
-        const maxX = container.clientWidth - imageSize;
-        const maxY = container.clientHeight - imageSize;
+      const { maxX, maxY } = boundsRef.current;
+      const nextX = posRef.current.x + velocityRef.current.x;
+      const nextY = posRef.current.y + velocityRef.current.y;
 
-        let newX = prevPos.x + velocityRef.current.x;
-        let newY = prevPos.y + velocityRef.current.y;
+      let newX = nextX;
+      let newY = nextY;
 
-        // Bounce off walls
-        if (newX <= 0 || newX >= maxX) {
-          velocityRef.current.x *= -1;
-          newX = Math.max(0, Math.min(newX, maxX));
-        }
+      // Bounce off walls (clamp inside bounds)
+      if (newX <= 0 || newX >= maxX) {
+        velocityRef.current.x *= -1;
+        newX = Math.max(0, Math.min(newX, maxX));
+      }
 
-        if (newY <= 0 || newY >= maxY) {
-          velocityRef.current.y *= -1;
-          newY = Math.max(0, Math.min(newY, maxY));
-        }
+      if (newY <= 0 || newY >= maxY) {
+        velocityRef.current.y *= -1;
+        newY = Math.max(0, Math.min(newY, maxY));
+      }
 
-        return { x: newX, y: newY };
-      });
+      posRef.current.x = newX;
+      posRef.current.y = newY;
+
+      // Imperatively update transform (avoid React re-render per frame)
+      yuzuEl.style.transform = `translate3d(${newX}px, ${newY}px, 0)`;
 
       animationFrameRef.current = requestAnimationFrame(animate);
     };
@@ -52,6 +75,7 @@ export default function BouncingYuzu({ onYuzuClick }: BouncingYuzuProps) {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
+      if (resizeObserver) resizeObserver.disconnect();
     };
   }, []);
 
@@ -61,13 +85,9 @@ export default function BouncingYuzu({ onYuzuClick }: BouncingYuzuProps) {
       className="fixed inset-0 pointer-events-none overflow-hidden z-50"
     >
       <div
-        style={{
-          position: 'absolute',
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-          transition: 'none',
-        }}
-        className="drop-shadow-2xl"
+        ref={yuzuRef}
+        className="drop-shadow-2xl will-change-transform"
+        style={{ position: 'absolute', left: 0, top: 0, transform: 'translate3d(40px, 0px, 0)' }}
       >
         <img
           src="/images/yuzu.png"

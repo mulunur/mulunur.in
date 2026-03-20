@@ -4,6 +4,7 @@
     "about": "About",
     "skills": "Skills",
     "portfolio": "Portfolio",
+    "paintings": "Paintings",
     "music": "Music",
     "cv": "CV",
     "contact": "Contact"
@@ -78,6 +79,14 @@
     "album": "Debut Album Coming Soon",
     "about": "I'm currently working on my debut album, blending electronic production with jazz influences and live instrumentation. The project explores possibility of experimental pop music."
   },
+  "paintings": {
+    "title": "Paintings",
+    "subtitle": "Visual art and creative expressions",
+    "paintings": [
+      { "name": "Artwork 1" },
+      { "name": "Artwork 2" }
+    ]
+  },
   "cv": {
     "title": "CV",
     "downloadLabel": "Download PDF"
@@ -93,7 +102,8 @@
     "brandDescription": "Programmer · Musician · Researcher",
     "copyright": "© 2026 Taisia Kartamysheva.",
     "links": {
-      "github": "GitHub"
+      "github": "GitHub",
+      "telegram": "Telegram"
     }
   },
   "language": "English"

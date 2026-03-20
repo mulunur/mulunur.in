@@ -49,6 +49,13 @@ body .text-dark-100 {
   border-radius: 4px;
 }
 
+/* Глобальный margin для карточек и контейнеров */
+div[class*="border"],
+section[class*="space-y"] > div,
+.space-y-4 > div {
+  margin-bottom: 1.25rem;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #6d00e6;
 }

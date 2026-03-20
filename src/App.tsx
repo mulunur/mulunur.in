@@ -7,7 +7,7 @@ import PoemsModal, { getRandomPoem } from './components/PoemsModal';
 import Home from './pages/Home';
 import About from './pages/About';
 import Skills from './pages/Skills';
-import Portfolio from './pages/Portfolio';
+import Paintings from './pages/Paintings';
 import Music from './pages/Music';
 import CV from './pages/CV';
 import Contact from './pages/Contact';
@@ -34,7 +34,8 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+            {/* <Route path="/portfolio" element={<Portfolio />} /> */}
+            <Route path="/paintings" element={<Paintings />} />
           <Route path="/music" element={<Music />} />
           <Route path="/cv" element={<CV />} />
           <Route path="/contact" element={<Contact />} />

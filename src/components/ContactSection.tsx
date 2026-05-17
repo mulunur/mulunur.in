@@ -1,59 +1,59 @@
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 // Определяем API URL на основе окружения
-const getApiUrl = () => {
-  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-    return 'http://localhost:3001/api';
-  }
-  // Для production используем текущий домен
-  return '/api';
-};
+// const getApiUrl = () => {
+//   if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+//     return 'http://localhost:3001/api';
+//   }
+//   // Для production используем текущий домен
+//   return '/api';
+// };
 
-const API_URL = getApiUrl();
+// const API_URL = getApiUrl();
 
 export default function ContactSection() {
   const { t } = useTranslation();
   const contactData = t('contact', { returnObjects: true }) as any;
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  // const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData(prev => ({ ...prev, [name]: value }));
+  // };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError('');
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsLoading(true);
+  //   setError('');
 
-    try {
-      const response = await fetch(`${API_URL}/messages`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+  //   try {
+  //     const response = await fetch(`${API_URL}/messages`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Ошибка при отправке сообщения');
-      }
+  //     if (!response.ok) {
+  //       const errorData = await response.json();
+  //       throw new Error(errorData.error || 'Ошибка при отправке сообщения');
+  //     }
 
-      //const result = await response.json();
-      alert('Спасибо за ваше сообщение! Скоро я его прочитаю.');
-      setFormData({ name: '', email: '', message: '' });
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Неизвестная ошибка';
-      setError(errorMessage);
-      console.error('Ошибка:', err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  //     //const result = await response.json();
+  //     alert('Спасибо за ваше сообщение! Скоро я его прочитаю.');
+  //     setFormData({ name: '', email: '', message: '' });
+  //   } catch (err) {
+  //     const errorMessage = err instanceof Error ? err.message : 'Неизвестная ошибка';
+  //     setError(errorMessage);
+  //     console.error('Ошибка:', err);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
   return (
     <section className="flex justify-center items-center  py-20 bg-dark-900">
@@ -106,7 +106,7 @@ export default function ContactSection() {
             </p>
           </div>
 
-          {/* Contact Form */}
+          {/* Contact Form
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-dark-300 mb-2">
@@ -166,7 +166,7 @@ export default function ContactSection() {
                 {error}
               </div>
             )}
-          </form>
+          </form> */}
         </div>
       </div>
     </section>

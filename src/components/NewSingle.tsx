@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export default function NewSingle() {
+    const { t } = useTranslation();
+    
     return (
         <div className="mb-8 p-6 bg-gradient-to-r from-primary-600/20 to-primary-400/10 rounded-lg border border-primary-500/30 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-primary-500/50 transition-all">
           <div className="flex flex-col md:flex-row gap-6">
@@ -19,7 +23,7 @@ export default function NewSingle() {
                   Mulünur - Священное королевство (о природе)
                 </h3>
                 <p className="text-dark-300 mb-4">
-                  Новый трек о фундаментальности природы
+                    {t("music.newSingle.description")}
                 </p>
               </div>
               

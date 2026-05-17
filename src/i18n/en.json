@@ -10,7 +10,7 @@
     "contact": "Contact"
   },
   "home": {
-    "moto": "Welcome to my portfolio! (in development 🔜)",
+    "moto": "Welcome to my portfolio!",
     "title": "Taisia Kartamysheva",
     "nickname": "mulünur",
     "subtitle": "Programmer · Musician · Researcher",
@@ -49,7 +49,7 @@
     },
     "music": {
       "title": "Music",
-      "items": ["Jazz Piano", "Electric Guitar", "Music Production", "Composition", "Fortepiano"]
+      "items": ["Jazz Piano", "Electric Guitar", "Music Production", "Composition"]
     },
     "technologicalStack": "Technological Stack"
   },
@@ -76,8 +76,13 @@
   "music": {
     "title": "Music",
     "subtitle": "Original compositions and experimental electronic music",
+    "newSingle": {
+      "attention": "New single",
+      "description": "New track about fundamentality of nature.",
+      "YandexMusic": "Yandex Music"
+    },
     "album": "Debut Album Coming Soon",
-    "about": "I'm currently working on my debut album, blending electronic production with jazz influences and live instrumentation. The project explores possibility of experimental pop music."
+    "about": "Currently working on my debut album, blending electronic production with jazz influences and live instrumentation. The project explores possibility of experimental pop music."
   },
   "paintings": {
     "title": "Paintings",

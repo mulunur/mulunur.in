@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useRef } from 'react';
+import NewSingle from './NewSingle';
 
 interface Track {
   filename: string;
@@ -21,29 +22,12 @@ export default function MusicSection() {
   ];
   
   const [playing, setPlaying] = useState<number | null>(null);
-  //const [tracks, setTracks] = useState<AudioFile[]>([]);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const audioRefs = useRef<(HTMLAudioElement | null)[]>([]);
 
- /* // Загружаем доступные аудиофайлы с сервера
-  useEffect(() => {
-    const loadAudioFiles = async () => {
-      try {
-        const response = await fetch('/api/audio-files');
-        const audioFiles: AudioFile[] = await response.json();
-        setTracks(audioFiles);
-      } catch (error) {
-        console.log('Невозможно загрузить список треков:', error);
-      }
-    };
-
-    loadAudioFiles();
-  }, []);
-  */
-
   const handlePlay = (index: number) => {
-    // Если уже играет этот трек, паузируем
+    // Если уже играет этот трек, пауза
     if (playing === index) {
       setPlaying(null);
       if (audioRefs.current[index]) {
@@ -102,6 +86,8 @@ export default function MusicSection() {
             </p>
           </div>
         </div>
+
+        <NewSingle/>
 
         {/* Tracks */}
         <div className="space-y-4">

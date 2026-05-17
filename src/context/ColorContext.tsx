@@ -1,6 +1,8 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
 const colors = [
+  '#000000', // Black
+  '#0300cf', // Dark Blue
   '#f69cf7', // Pink
   '#199b92', // Teal
   '#00a1c5', // Blue

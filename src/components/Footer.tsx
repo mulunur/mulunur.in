@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
           </div>
 
-        <div className="border-t border-dark-700 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-dark-400">
+        {/* <div className="border-t border-dark-700 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-dark-400">
           <p>{t('footer.copyright')}</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-primary-400 transition-colors">
@@ -80,7 +80,7 @@ export default function Footer() {
               Terms
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
       <img className="bottom-0 h-40 left-1/2 -translate-x-1/2" src={'/images/rainbowSpark.png'} alt="Company Logo" />
     </footer>

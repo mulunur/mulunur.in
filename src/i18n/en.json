@@ -41,11 +41,11 @@
     "title": "Skills & Expertise",
     "programming": {
       "title": "Programming",
-      "items": ["React", "TypeScript", "JavaScript", "Python", "Web Development", "System Programming"]
+      "items": ["C#", "TypeScript/JavaScript", "Python", "React", "Web Development", "System Programming", "Operating Systems"]
     },
     "design": {
       "title": "3D & Design",
-      "items": ["3D Modeling", "Blender", "Generative Art", "Visual Design"]
+      "items": ["3D Modeling", "Generative Art", "Visual Design"]
     },
     "music": {
       "title": "Music",

@@ -14,7 +14,15 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const MESSAGES_DIR = path.join(__dirname, 'messages');
 
 // Определяем пути для статических файлов
-const DIST_DIR = path.join(__dirname, 'dist');
+// Поддерживаем оба варианта: когда server.js в корне и когда в dist
+let DIST_DIR = path.join(__dirname, 'dist');
+if (!fs.existsSync(DIST_DIR)) {
+  // Если dist не найдена, предполагаем что мы уже в папке dist
+  DIST_DIR = __dirname;
+}
+
+console.log(`📁 DIST_DIR: ${DIST_DIR}`);
+console.log(`✅ dist exists: ${fs.existsSync(DIST_DIR)}`);
 
 // Middleware
 app.use(express.json());
@@ -25,9 +33,18 @@ app.use((req, res, next) => {
   next();
 });
 
+// Логирование всех API запросов
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api')) {
+    console.log(`📡 ${req.method} ${req.path}`);
+  }
+  next();
+});
+
 // Подаем статические файлы фронтенда из папки dist
 if (fs.existsSync(DIST_DIR)) {
   app.use(express.static(DIST_DIR));
+  console.log(`✅ Статические файлы подаются из: ${DIST_DIR}`);
 }
 
 // Создаем папку messages, если её нет
@@ -102,7 +119,12 @@ app.get('/api/audio-files', (req, res) => {
   try {
     const AUDIO_DIR = path.join(DIST_DIR, 'audio');
     
+    console.log(`🎵 Запрос списка треков`);
+    console.log(`   AUDIO_DIR: ${AUDIO_DIR}`);
+    console.log(`   Существует: ${fs.existsSync(AUDIO_DIR)}`);
+    
     if (!fs.existsSync(AUDIO_DIR)) {
+      console.warn(`⚠️  Папка audio не найдена: ${AUDIO_DIR}`);
       return res.json([]);
     }
 
@@ -114,9 +136,10 @@ app.get('/api/audio-files', (req, res) => {
         name: file.replace(/\.(mp3|wav|ogg|m4a)$/i, '')
       }));
 
+    console.log(`✅ Найдено ${files.length} аудиофайлов`);
     res.json(files);
   } catch (error) {
-    console.error('Ошибка при чтении аудиофайлов:', error);
+    console.error('❌ Ошибка при чтении аудиофайлов:', error);
     res.status(500).json({ error: 'Ошибка сервера' });
   }
 });
@@ -145,6 +168,12 @@ app.get('/api/messages/:filename', (req, res) => {
 
 // SPA fallback - отправляем index.html для всех остальных маршрутов
 app.get('*', (req, res) => {
+  // Не отправляем HTML для API запросов
+  if (req.path.startsWith('/api')) {
+    console.warn(`⚠️  API endpoint не найден: ${req.path}`);
+    return res.status(404).json({ error: 'API endpoint not found' });
+  }
+  
   const indexPath = path.join(DIST_DIR, 'index.html');
   if (fs.existsSync(indexPath)) {
     res.sendFile(indexPath);
@@ -155,9 +184,19 @@ app.get('*', (req, res) => {
 
 // Запуск HTTP сервера
 app.listen(PORT, () => {
-  console.log(`HTTP сервер запущен на http://localhost:${PORT}`);
-  console.log(`Режим: ${NODE_ENV}`);
-  console.log(`Сообщения сохраняются в папке: ${MESSAGES_DIR}`);
+  console.log(`\n🚀 HTTP сервер запущен на http://localhost:${PORT}`);
+  console.log(`📌 Режим: ${NODE_ENV}`);
+  console.log(`💬 Сообщения сохраняются в папке: ${MESSAGES_DIR}`);
+  console.log(`📁 Фронтенд подается из: ${DIST_DIR}`);
+  
+  const audioDir = path.join(DIST_DIR, 'audio');
+  if (fs.existsSync(audioDir)) {
+    const audioFiles = fs.readdirSync(audioDir).filter(f => /\.(mp3|wav|ogg|m4a)$/i.test(f));
+    console.log(`🎵 Найдено аудиофайлов: ${audioFiles.length}`);
+  } else {
+    console.warn(`⚠️  Папка audio не найдена: ${audioDir}`);
+  }
+  console.log('');
 });
 
 // Запуск HTTPS сервера (если доступны сертификаты)

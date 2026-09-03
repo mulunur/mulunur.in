@@ -8,9 +8,15 @@ interface Track {
   name: string;
 }
 
+interface MusicData {
+  title: string;
+  subtitle: string;
+  album: string;
+}
+
 export default function MusicSection() {
   const { t } = useTranslation();
-  const musicData = t('music', { returnObjects: true }) as any;
+  const musicData = t('music', { returnObjects: true }) as MusicData;
   
   // Треки захардкодены - загружаются статически без API
   const staticTracks: Track[] = [

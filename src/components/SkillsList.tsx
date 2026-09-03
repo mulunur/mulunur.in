@@ -1,11 +1,23 @@
 import { useTranslation } from 'react-i18next';
 
+interface SkillCategory {
+  title: string;
+  items: string[];
+}
+
+interface SkillsData {
+  title: string;
+  programming: SkillCategory;
+  design: SkillCategory;
+  music: SkillCategory;
+}
+
 export default function SkillsList() {
   const { t } = useTranslation();
 
-  const skillsData = t('skills', { returnObjects: true }) as any;
+  const skillsData = t('skills', { returnObjects: true }) as SkillsData;
 
-  const categories = [
+  const categories: { key: keyof Pick<SkillsData, 'programming' | 'design' | 'music'>; icon: string }[] = [
     { key: 'programming', icon: '💻' },
     { key: 'design', icon: '🎨' },
     { key: 'music', icon: '🎵' },

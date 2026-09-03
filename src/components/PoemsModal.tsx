@@ -67,7 +67,7 @@ export default function PoemsModal({ isOpen, onClose, poem }: PoemsModalProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-auto">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/30 opacity-0 pointer-events-none"
+        className="absolute inset-0 bg-black/30"
         onClick={onClose}
       />
 

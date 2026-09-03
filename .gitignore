@@ -17,6 +17,3 @@ dist-ssr
 .env.local
 .env.*.local
 
-# Messages (user data)
-messages/
-

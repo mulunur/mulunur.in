@@ -1,11 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import AboutCard from '../components/AboutCard';
-import type { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from 'react';
+
+interface Milestone {
+  year: string;
+  title: string;
+  desc: string;
+}
 
 export default function About() {
-const { t } = useTranslation();
+  const { t } = useTranslation();
 
-const jorneyData = t('about.timeline', { returnObjects: true }) as any;
+  const journeyData = t('about.timeline', { returnObjects: true }) as Milestone[];
   return (
     <main className="pt-20">
       <AboutCard />
@@ -16,7 +21,7 @@ const jorneyData = t('about.timeline', { returnObjects: true }) as any;
           <h2 className="text-3xl font-bold mb-12 text-center">{t("about.journey")}</h2>
 
           <div className="space-y-8">
-            {jorneyData.map((milestone: { year: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | Iterable<ReactNode> | null | undefined; title: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | Iterable<ReactNode> | null | undefined; desc: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | Iterable<ReactNode> | null | undefined; }, i: Key | null | undefined) => (
+            {journeyData.map((milestone, i) => (
               <div key={i} className="flex gap-6">
                 <div className="flex-shrink-0 w-24">
                   <span className="text-xl font-bold text-primary-400">{milestone.year}</span>

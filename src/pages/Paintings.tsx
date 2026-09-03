@@ -47,7 +47,7 @@ export default function Paintings() {
         <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
               {paintingsData.title}
             </h1>
             {/* <p className="text-dark-300 text-lg">

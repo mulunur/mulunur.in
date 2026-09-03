@@ -15,10 +15,20 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Golos Text', system-ui, sans-serif;
   background-color: lab(100% 0.01 -0.01);
   /*color: #e5e7eb;*/
   color: var(--text-color);
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Logo-type spots (header, footer, hero nickname) keep the original
+   system font look, unaffected by the body's Golos Text default. */
+.font-logo {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Apply color to text and borders */

@@ -1,18 +1,18 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
+// Curated for contrast against the pale, muted-green background photo —
+// dark, saturated "protest poster" tones instead of pastels/neons, which
+// sat too close in lightness to the backdrop to read.
 const colors = [
-  '#000000', // Black
-  '#0300cf', // Dark Blue
-  '#f69cf7', // Pink
-  '#199b92', // Teal
-  '#00a1c5', // Blue
-  '#bf3803', // Salmon
-  '#33dbb1', // Mint
+  '#111111', // Black
+  '#0b3fae', // Cobalt Blue
+  '#d6006c', // Hot Magenta
+  '#0d5c53', // Deep Petrol
+  '#a4133c', // Blood Red
+  '#5a189a', // Deep Violet
+  '#d9480f', // Sunset Orange
   '#e1ff37', // Yellow
-  '#cf5eff', // Purple
-  '#fe5454', // Light Red
-  '#37b9ff', // Sky Blue
-  '#ff974e', // Peach
+  '#1b4332', // Forest Green
 ];
 
 interface ColorContextType {

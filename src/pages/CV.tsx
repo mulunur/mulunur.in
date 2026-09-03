@@ -21,7 +21,7 @@ export default function CV() {
         <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header with title and download button */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 gap-6">
-            <h1 className="text-4xl font-bold text-dark-900">{t('cv.title')}</h1>
+            <h1 className="font-display text-4xl font-bold text-dark-900">{t('cv.title')}</h1>
             <a
               href={cvFile}
               download={cvFileName}

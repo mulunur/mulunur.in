@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
+            <h3 className="font-logo text-xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
               mulünur
             </h3>
             <p className="mt-2 text-dark-400 text-sm">

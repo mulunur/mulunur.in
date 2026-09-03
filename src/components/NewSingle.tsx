@@ -18,7 +18,7 @@ export default function NewSingle() {
                 {/* Single Info */}
                 <div className="flex-1 flex flex-col justify-between">
                     <div>
-                        <p className="text-primary-400 text-sm font-semibold mb-1">NEW SINGLE</p>
+                        <p className="text-primary-400 text-sm font-semibold mb-1">{t("music.newSingle.attention")}</p>
                         <h3 className="text-2xl font-bold mb-2">
                             Mulünur - Священное королевство (о природе)
                         </h3>
@@ -54,9 +54,9 @@ export default function NewSingle() {
                             SoundCloud
                         </a>
                     </div>
-                                            <a>
-                            {t("music.newSingle.OtherPlatforms")}
-                        </a>
+                    <p className="text-dark-400 text-sm mt-3">
+                        {t("music.newSingle.OtherPlatforms")}
+                    </p>
                 </div>
             </div>
         </div>

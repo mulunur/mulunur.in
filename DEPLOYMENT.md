@@ -22,7 +22,6 @@ NODE_ENV=production PORT=3000 npm run server
 ├── package.json
 ├── server.js
 ├── dist/                    # Собранный фронтенд (создается после npm run build)
-├── messages/                # Папка с сохраненными сообщениями
 ├── node_modules/
 └── pm2.config.js            # Конфиг для PM2 (опционально)
 ```
@@ -57,7 +56,6 @@ NODE_ENV=production PORT=80 node server.js
 echo "node_modules/
 dist/
 .env
-messages/
 *.log" >> .gitignore
 
 git add .
@@ -157,16 +155,6 @@ server {
         add_header Cache-Control "public, immutable";
     }
 
-    # API
-    location /api/ {
-        proxy_pass http://mulunur_backend;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-
     # Все остальное на приложение (SPA)
     location / {
         proxy_pass http://mulunur_backend;
@@ -184,17 +172,6 @@ server {
 sudo ln -s /etc/nginx/sites-available/mulunur.in /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
-```
-
-## Резервная копия сообщений
-
-Важно регулярно архивировать папку `messages/`:
-```bash
-# На сервере - создать архив
-tar -czf messages-backup-$(date +%Y%m%d).tar.gz messages/
-
-# Скопировать на локальную машину
-scp user@your-server.com:/var/www/mulunur.in/messages-backup-*.tar.gz ~/backups/
 ```
 
 ## Обновление сайта
@@ -233,4 +210,3 @@ dotenv.config();
 
 - PM2 логи: `pm2 logs`
 - Nginx логи: `/var/log/nginx/access.log`, `/var/log/nginx/error.log`
-- Сообщения сохраняются: `/var/www/mulunur.in/messages/`

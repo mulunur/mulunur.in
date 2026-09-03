@@ -13,7 +13,6 @@ export default function BouncingYuzu({ onYuzuClick }: BouncingYuzuProps) {
   const animationFrameRef = useRef<number | null>(null);
 
   const handleYuzuClick = (e: React.MouseEvent) => {
-    console.log("Yuzu clicked!");
     e.stopPropagation();
     onYuzuClick();
   };

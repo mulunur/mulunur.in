@@ -250,8 +250,6 @@ function AppContent() {
         style={{ backgroundImage: "url('/images/site-bg.png')" }}
         aria-hidden="true"
       />
-      {/* Readability gradient over the photo */}
-      {/* <div className="absolute inset-0 z-0 bg-gradient-to-b from-dark-900/70 via-dark-900/55 to-dark-900/85" aria-hidden="true" /> */}
       <FilmGrainOverlay />
 
       {/* Content above background/noise */}
@@ -280,7 +278,6 @@ function App() {
   const [currentPoem, setCurrentPoem] = useState('');
 
   const handleYuzuClick = () => {
-    console.log('Yuzu clicked!');
     setCurrentPoem(getRandomPoem());
     setIsModalOpen(true);
   };

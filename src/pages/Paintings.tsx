@@ -6,9 +6,15 @@ interface Painting {
   name: string;
 }
 
+interface PaintingsData {
+  title: string;
+  subtitle: string;
+  paintings: { name: string }[];
+}
+
 export default function Paintings() {
   const { t } = useTranslation();
-  const paintingsData = t('paintings', { returnObjects: true }) as any;
+  const paintingsData = t('paintings', { returnObjects: true }) as PaintingsData;
 
   // Статически определённые картины
   const paintings: Painting[] = [

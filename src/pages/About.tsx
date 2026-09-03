@@ -18,7 +18,7 @@ export default function About() {
       {/* Timeline */}
       <section className="flex items-center justify-center  py-20 bg-dark-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-12 text-center">{t("about.journey")}</h2>
+          <h2 className="font-display text-3xl font-bold mb-12 text-center">{t("about.journey")}</h2>
 
           <div className="space-y-8">
             {journeyData.map((milestone, i) => (

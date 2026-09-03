@@ -33,7 +33,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Golos Text', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
         mono: ['Fira Code', 'monospace'],
       },
       backgroundImage: {

@@ -20,7 +20,8 @@ export default function NewSingle() {
                     <div>
                         <p className="text-primary-400 text-sm font-semibold mb-1">{t("music.newSingle.attention")}</p>
                         <h3 className="text-2xl font-bold mb-2">
-                            Mulünur - Священное королевство (о природе)
+                            <span className="font-sans">Mulünur</span>
+                            <span className="font-display"> - Священное королевство (о природе)</span>
                         </h3>
                         <p className="text-dark-300 mb-4">
                             {t("music.newSingle.description")}

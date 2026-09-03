@@ -26,7 +26,7 @@ export default function SkillsList() {
   return (
     <section className="flex items-center justify-center py-20 bg-dark-800">
       <div className="items-center justify-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+        <h2 className="font-display text-4xl md:text-5xl font-bold mb-16 text-center">
           {skillsData.title}
         </h2>
 
@@ -39,7 +39,7 @@ export default function SkillsList() {
                 className="p-8 bg-dark-900 rounded-lg border border-dark-700 hover:border-primary-500/50 transition-all hover:shadow-lg hover:shadow-primary-600/10"
               >
                 <div className="text-4xl mb-4">{icon}</div>
-                <h3 className="text-2xl font-semibold text-primary-400 mb-6">
+                <h3 className="font-display text-2xl font-semibold text-primary-400 mb-6">
                   {category.title}
                 </h3>
                 <ul className="space-y-3">

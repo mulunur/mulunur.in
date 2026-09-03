@@ -80,7 +80,7 @@ export default function MusicSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
             {musicData.title}
           </h2>
           <p className="text-dark-300 text-lg mb-4">

@@ -32,7 +32,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent"
+            className="font-logo text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent"
           >
             mulünur
           </Link>

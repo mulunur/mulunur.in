@@ -15,7 +15,7 @@ export default function ContactSection() {
   return (
     <section className="flex justify-center items-center  py-20 bg-dark-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
+        <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center">
           {contactData.title}
         </h2>
 

@@ -14,28 +14,42 @@ export default function Header() {
   };
 
   const isActive = (path: string) => location.pathname === path;
+  const tickerText = t('ticker.text');
 
   const navLinks = [
-    { path: '/', label: t('nav.home') },
     { path: '/about', label: t('nav.about') },
-    { path: '/skills', label: t('nav.skills') },
     // { path: '/portfolio', label: t('nav.portfolio') },
     { path: '/paintings', label: t('nav.paintings') },
     { path: '/music', label: t('nav.music') },
     { path: '/cv', label: t('nav.cv') },
-    { path: '/contact', label: t('nav.contact') },
   ];
 
   return (
     <header className="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-900">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-x-3 md:gap-x-6">
           <Link
             to="/"
             className="font-logo text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent"
           >
             mulünur
           </Link>
+
+          {/* Announcement ticker */}
+          <div className="ticker min-w-0 flex-1" aria-label={tickerText}>
+            <div className="ticker-track">
+              {[false, true].map((hidden) => (
+                <span key={String(hidden)} className="ticker-copy" aria-hidden={hidden || undefined}>
+                  {Array.from({ length: 4 }, (_, i) => (
+                    <span key={i} className="ticker-item">
+                      {tickerText}
+                      <span className="ticker-sep">◆</span>
+                    </span>
+                  ))}
+                </span>
+              ))}
+            </div>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">

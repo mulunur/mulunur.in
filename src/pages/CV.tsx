@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import ContactSection from '../components/ContactSection';
 
 export default function CV() {
   const { t, i18n } = useTranslation();
@@ -16,8 +17,8 @@ export default function CV() {
     : 'CV - Taisia Kartamysheva.pdf';
 
   return (
-    <main className="pt-20 pb-20 bg-white">
-      <section className="flex justify-center items-center py-12">
+    <main className="pt-20">
+      <section className="flex justify-center items-center pt-12 pb-20 bg-white">
         <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header with title and download button */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 gap-6">
@@ -42,6 +43,8 @@ export default function CV() {
           </div>
         </div>
       </section>
+
+      <ContactSection />
     </main>
   );
 }

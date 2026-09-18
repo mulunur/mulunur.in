@@ -11,11 +11,11 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-4">
+        <h1 className="text-glow font-display text-5xl md:text-7xl font-bold text-white mb-4">
           {t('home.title')}
         </h1>
 
-        <p className="font-logo text-3xl md:text-4xl font-bold text-primary-400 mb-8">
+        <p className="text-glow font-logo text-3xl md:text-4xl font-bold text-primary-400 mb-8">
           {t('home.nickname')}
         </p>
 

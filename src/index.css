@@ -4,12 +4,6 @@
   --text-color: #000000;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -42,6 +36,69 @@ body .bg-dark-900,
 body .bg-dark-800,
 body .text-dark-100 {
   color: var(--text-color) !important;
+}
+
+/* Header announcement ticker: transparent, glowing, slow */
+.ticker {
+  overflow: hidden;
+  /* Room for the glow so overflow:hidden doesn't cut it into a hard edge;
+     the negative margin keeps the header height unchanged. */
+  padding-block: 1.5rem;
+  margin-block: -1.5rem;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 90s linear infinite;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-copy {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Soft white glow shared by the ticker, the hero name and all headings */
+.ticker-item,
+.text-glow,
+h1,
+h2,
+h3 {
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.45),
+    0 0 20px rgba(255, 255, 255, 0.35),
+    0 0 32px rgba(255, 255, 255, 0.2);
+}
+
+.ticker-sep {
+  opacity: 0.6;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation-play-state: paused; }
 }
 
 /* Custom scrollbar */

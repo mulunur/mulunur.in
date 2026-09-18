@@ -5,14 +5,14 @@ import { createContext, useContext, useState, type ReactNode } from 'react';
 // sat too close in lightness to the backdrop to read.
 const colors = [
   '#111111', // Black
-  '#0b3fae', // Cobalt Blue
-  '#d6006c', // Hot Magenta
-  '#0d5c53', // Deep Petrol
-  '#a4133c', // Blood Red
-  '#5a189a', // Deep Violet
-  '#d9480f', // Sunset Orange
+  '#012abc', // Cobalt Blue
+  '#e20071', // Hot Magenta
+  '#0a6459', // Deep Petrol
+  '#b10009', // Blood Red
+  '#630cb9', // Deep Violet
+  '#d44107', // Sunset Orange
   '#e1ff37', // Yellow
-  '#1b4332', // Forest Green
+  '#12593c', // Forest Green
 ];
 
 interface ColorContextType {

@@ -1,19 +1,20 @@
 {
+  "ticker": {
+    "text": "New track “Heights and Falls” · out October 6 on all platforms"
+  },
   "nav": {
     "home": "Home",
     "about": "About",
-    "skills": "Skills",
     "portfolio": "Portfolio",
     "paintings": "Paintings",
     "music": "Music",
-    "cv": "CV",
-    "contact": "Contact"
+    "cv": "CV"
   },
   "home": {
     "moto": "Welcome to my portfolio!",
     "title": "Taya Kartamysheva",
     "nickname": "mulünur",
-    "subtitle": "Programmer · Musician · Researcher",
+    "subtitle": "Programmer · Musician",
     "cta": "Explore My Work"
   },
   "about": {
@@ -112,7 +113,7 @@
     "message": "Feel free to reach out about collaborations, music projects, or just to chat about programming and music!"
   },
   "footer": {
-    "brandDescription": "Programmer · Musician · Researcher",
+    "brandDescription": "Programmer · Musician",
     "copyright": "© 2026 Taya Kartamysheva.",
     "links": {
       "github": "GitHub",

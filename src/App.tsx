@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -6,11 +6,9 @@ import BouncingYuzu from './components/BouncingYuzu';
 import PoemsModal, { getRandomPoem } from './components/PoemsModal';
 import Home from './pages/Home';
 import About from './pages/About';
-import Skills from './pages/Skills';
 import Paintings from './pages/Paintings';
 import Music from './pages/Music';
 import CV from './pages/CV';
-import Contact from './pages/Contact';
 import { ColorProvider, useColor } from './context/ColorContext';
 import './i18n/i18n';
 import './index.css';
@@ -259,12 +257,12 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
+            <Route path="/skills" element={<Navigate to="/about" replace />} />
             {/* <Route path="/portfolio" element={<Portfolio />} /> */}
             <Route path="/paintings" element={<Paintings />} />
             <Route path="/music" element={<Music />} />
             <Route path="/cv" element={<CV />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Navigate to="/cv" replace />} />
           </Routes>
         </div>
         <Footer />

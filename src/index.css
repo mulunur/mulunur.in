@@ -55,10 +55,6 @@ body .text-dark-100 {
   animation: ticker-scroll 90s linear infinite;
 }
 
-.ticker:hover .ticker-track {
-  animation-play-state: paused;
-}
-
 .ticker-copy {
   display: flex;
   flex-shrink: 0;

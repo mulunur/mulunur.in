@@ -17,12 +17,13 @@ export default function CV() {
     : 'CV - Taisia Kartamysheva.pdf';
 
   return (
-    <main className="pt-20">
-      <section className="flex justify-center items-center pt-12 pb-20 bg-white">
+    <main className="pt-6">
+      <section className="flex justify-center items-center pb-20">
         <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header with title and download button */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-12 gap-6">
-            <h1 className="font-display text-4xl font-bold text-dark-900">{t('cv.title')}</h1>
+          <h1 className="sr-only">{t('cv.title')}</h1>
+
+          {/* Download button */}
+          <div className="flex justify-center mb-6">
             <a
               href={cvFile}
               download={cvFileName}

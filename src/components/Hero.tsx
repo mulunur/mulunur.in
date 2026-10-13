@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import ArtistCard from './ArtistCard';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -22,6 +23,8 @@ export default function Hero() {
         <p className="text-xl md:text-2xl text-dark-300 mb-8 max-w-3xl mx-auto">
           {t('home.subtitle')}
         </p>
+
+        <ArtistCard />
       </div>
     </section>
   );

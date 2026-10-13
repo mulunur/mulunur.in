@@ -16,11 +16,16 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: localStorage.getItem('language') || 'en',
+    lng: localStorage.getItem('language') || 'ru',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
     },
   });
+
+document.documentElement.lang = i18n.language;
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.lang = lng;
+});
 
 export default i18n;

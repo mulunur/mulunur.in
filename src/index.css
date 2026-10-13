@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --radius-xl: 0.55rem;
+}
+
 :root {
   --text-color: #000000;
 }

@@ -19,11 +19,26 @@ export default function Paintings() {
   // Статически определённые картины
   const paintings: Painting[] = [
     {
+      id: 7,
+      path: '/paintings/raw-run.png',
+      name: 'Raw run (2026)'
+    },
+    {
+      id: 5,
+      path: '/paintings/IMG_0033.jpeg',
+      name: 'Самуи (2024)'
+    },
+    {
+      id: 6,
+      path: '/paintings/tula.png',
+      name: 'Тула (2023)'
+    },
+    {
       id: 0,
       path: '/paintings/IMG_3148.jpeg',
       name: 'Для отца (2023)'
     },
-        {
+    {
       id: 4,
       path: '/paintings/IMG_6935.jpeg',
       name: 'Херувимы (2023)'
@@ -33,12 +48,6 @@ export default function Paintings() {
       path: '/paintings/IMG_6818.jpeg',
       name: paintingsData.paintings?.[2]?.name || 'Меланхолия (2023)'
     },
-    {
-      id: 3,
-      path: '/paintings/IMG_0033.jpeg',
-      name: 'Самуи (2024)'
-    },
-
   ];
 
   return (
@@ -67,7 +76,7 @@ export default function Paintings() {
                   <img
                     src={painting.path}
                     alt={painting.name}
-                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-auto object-cover"
                     loading="lazy"
                   />
                 </div>

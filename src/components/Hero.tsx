@@ -12,17 +12,28 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <img
+          src="/images/lettering-text.png"
+          alt={t('home.nickname')}
+          className="mx-auto mb-2 block h-auto"
+          style={{ width: 'min(692px, 100%)', transform: 'translateX(8px)' }}
+        />
+
         <h1 className="text-glow font-display text-5xl md:text-7xl font-bold text-white mb-4">
           {t('home.title')}
         </h1>
 
-        <p className="text-glow font-logo text-3xl md:text-4xl font-bold text-primary-400 mb-8">
-          {t('home.nickname')}
-        </p>
-
-        <p className="text-xl md:text-2xl text-dark-300 mb-8 max-w-3xl mx-auto">
+        <p className="text-xl md:text-2xl text-dark-300 max-w-3xl mx-auto">
           {t('home.subtitle')}
         </p>
+
+        <img
+          src="/images/lettering-stroke.png"
+          alt=""
+          aria-hidden="true"
+          className="mx-auto mt-2 block h-auto"
+          style={{ width: 'min(395px, 70%)', transform: 'translateX(11px)' }}
+        />
 
         <ArtistCard />
       </div>

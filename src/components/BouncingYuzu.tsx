@@ -8,7 +8,7 @@ export default function BouncingYuzu({ onYuzuClick }: BouncingYuzuProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const yuzuRef = useRef<HTMLDivElement>(null);
   const posRef = useRef({ x: 40, y: 0 });
-  const velocityRef = useRef({ x: 0.75, y: 0.75 });
+  const velocityRef = useRef({ x: 0.4, y: 0.4 });
   const boundsRef = useRef({ maxX: 0, maxY: 0 });
   const animationFrameRef = useRef<number | null>(null);
 

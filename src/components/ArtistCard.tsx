@@ -16,15 +16,8 @@ export default function ArtistCard() {
   ];
 
   return (
-    <div className="flex justify-center pt-10 text-left">
-      <div className="grid w-full max-w-2xl grid-cols-1 gap-6 rounded-2xl border-[1.5px] p-4 backdrop-blur-md sm:grid-cols-[13rem_1fr] sm:items-center">
-        <img
-          src="/images/artist-cover.jpg"
-          alt={t('artistCard.alt')}
-          className="aspect-[4/3] w-full rounded-xl object-cover object-[60%_25%] sm:aspect-square"
-          loading="lazy"
-        />
-
+    <div className="flex justify-center pt-6">
+      <div className="w-fit max-w-full rounded-2xl border-[1.5px] px-8 py-6 backdrop-blur-md">
         <div>
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.14em]">
             {t('artistCard.kicker')}
@@ -32,7 +25,7 @@ export default function ArtistCard() {
           <h3 className="font-display mb-1 text-3xl font-bold">mulünur</h3>
           <p className="mb-4">{t('artistCard.line')}</p>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap justify-center gap-2">
             {platforms.map(({ key, label, href }) => (
               <a
                 key={key}

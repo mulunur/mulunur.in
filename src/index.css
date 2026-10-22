@@ -138,10 +138,3 @@ a, button {
   color: #ffffff;
 }
 
-/* Film grain overlay (luminance + chroma) */
-.film-grain-overlay {
-  mix-blend-mode: overlay;
-  opacity: 1;
-  /* Keep it subtle but visible over the background photo */
-  filter: saturate(1.15);
-}

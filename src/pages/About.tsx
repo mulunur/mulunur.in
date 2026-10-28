@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import AboutCard from '../components/AboutCard';
+import Interests from '../components/Interests';
 import SkillsList from '../components/SkillsList';
 
 interface Milestone {
@@ -16,6 +17,8 @@ export default function About() {
   return (
     <main className="pt-20">
       <AboutCard />
+
+      <Interests />
 
       <SkillsList />
 

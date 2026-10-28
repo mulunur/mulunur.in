@@ -24,14 +24,10 @@
   },
   "about": {
     "title": "About Me",
-    "titleProgramming": "Programming",
-    "bio": "I've been programming since age 14, starting with fractals and generative art. My journey includes 3D modeling, music production, and the intersection of technology and creativity.",
-    "titleMusic": "Music",
-    "music": "Music has been a passion since childhood. I studied classical piano in music school, transitioned to electric guitar, and now focus on jazz piano. I perform with my university jazz ensemble and compose original music.",
-    "titleCurrentProject": "CurrentProject",
-    "album": "Currently working on my debut electronic music album.",
-    "passion": "I'm fascinated by the intersection of code and creativity—whether that's algorithms generating visual patterns or tools for music production.",
     "journey": "Journey",
+    "interestsLabel": "interests:",
+    "interests": ["computers", "software architecture", "music", "fashion", "philosophy", "theology", "opera", "art", "books", "the computability problem", "learning"],
+    "playlists": "Listen to my playlists",
     "timeline": [
       { "year": "2006", "title": "Started at age 5", "desc": "Vocal and choir lessons at music school"},
       { "year": "2010", "title": "Age 9", "desc": "Started piano lessons and tennis"},
@@ -47,7 +43,7 @@
     "title": "Skills & Expertise",
     "programming": {
       "title": "Programming",
-      "items": ["Python", "TypeScript / JavaScript", "React, React Native", "Node.js", ".NET, ASP.NET", "PostgreSQL & other DBs", "DevOps", "AI Agent Systems"]
+      "items": ["Python", "C++", "TypeScript / JavaScript", "React, React Native", "Node.js", ".NET, ASP.NET", "PostgreSQL & other DBs", "DevOps", "AI Agent Systems"]
     },
     "design": {
       "title": "3D & Design",
@@ -59,7 +55,7 @@
     },
     "technologicalStack": "Technological Stack",
     "techStack": [
-      "Python", ".NET, ASP.NET", "TypeScript", "React, React Native",
+      "Python", "C++", ".NET, ASP.NET", "TypeScript", "React, React Native",
       "Node.js", "PostgreSQL & other DBs", "Docker", "DevOps",
       "FastAPI, LangChain, RAG", "TensorFlow, Keras, OpenCV",
       "Microservice Architecture", "Design Patterns",

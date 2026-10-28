@@ -13,20 +13,25 @@ html {
 }
 
 body {
-  font-family: 'Golos Text', system-ui, sans-serif;
+  font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
   background-color: lab(100% 0.01 -0.01);
   /*color: #e5e7eb;*/
   color: var(--text-color);
 }
 
 .font-display {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* Monospace headings look loose, so pull the letters slightly closer. */
+h1, h2, h3, .font-display {
+  letter-spacing: -0.03em;
 }
 
 /* Logo-type spots (header, footer, hero nickname) keep the original
-   system font look, unaffected by the body's Golos Text default. */
+   system font look, unaffected by the body's Nimbus Sans default. */
 .font-logo {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 /* Apply color to text and borders */

@@ -13,6 +13,7 @@ const colors = [
   '#d44107', // Sunset Orange
   '#e1ff37', // Yellow
   '#12593c', // Forest Green
+  '#ff2777', // Bright Pink
 ];
 
 interface ColorContextType {

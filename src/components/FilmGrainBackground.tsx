@@ -11,8 +11,9 @@ const BACKGROUND_SRC = '/images/site-bg.png';
 const NOISE_INTENSITY = 0.45;
 const NOISE_SHADOW = 0.0;
 const NOISE_SPEED = 2.50;
-// Grain size: 1 = one device pixel per grain, smaller = coarser grain.
+// Grain width: 1 = one device pixel per grain, smaller = coarser grain.
 const NOISE_SCALE = 0.8;
+const NOISE_HEIGHT = 3;
 const MAX_FPS = 30;
 const MAX_DPR = 2;
 
@@ -31,6 +32,7 @@ uniform vec2 uView;
 uniform vec2 uPage;
 uniform float uTop;
 uniform float uDpr;
+uniform float uNoiseHeight;
 uniform float uScale;
 uniform vec2 uImageSize;
 uniform float uTime;
@@ -44,9 +46,13 @@ float hash(vec3 p3) {
   return fract((p3.x + p3.y) * p3.z);
 }
 
-// Zero-mean noise in [-1, 1] with a triangular distribution (softer than white).
-float grainAt(vec2 cell, float frame) {
-  return hash(vec3(cell, frame)) + hash(vec3(cell + 17.0, frame + 3.0)) - 1.0;
+// Independent zero-mean noise per color channel, with a triangular distribution.
+vec3 grainAt(vec2 cell, float frame) {
+  return vec3(
+    hash(vec3(cell, frame)) + hash(vec3(cell + 17.0, frame + 3.0)),
+    hash(vec3(cell + 31.0, frame + 11.0)) + hash(vec3(cell + 53.0, frame + 19.0)),
+    hash(vec3(cell + 71.0, frame + 23.0)) + hash(vec3(cell + 97.0, frame + 29.0))
+  ) - 1.0;
 }
 
 float luma(vec3 c) {
@@ -67,13 +73,18 @@ void main() {
   vec3 color = texture2D(uImage, uv).rgb;
 
   // Cross-fade between two noise frames so the grain drifts instead of flickering.
-  vec2 cell = floor(gl_FragCoord.xy * uScale);
+  vec2 cell = floor(vec2(gl_FragCoord.x * uScale, gl_FragCoord.y / (uNoiseHeight * uDpr)));
   float frame = floor(uTime);
   float w = smoothstep(0.0, 1.0, fract(uTime));
-  float grain = (grainAt(cell, frame) * (1.0 - w) + grainAt(cell, frame + 1.0) * w)
+  vec3 grain = (grainAt(cell, frame) * (1.0 - w) + grainAt(cell, frame + 1.0) * w)
               / sqrt((1.0 - w) * (1.0 - w) + w * w);
+  vec2 block = floor(cell / 2.0);
+  float particleIndex = floor(hash(vec3(block, 41.0)) * 4.0);
+  vec2 particleCell = vec2(mod(particleIndex, 2.0), floor(particleIndex / 2.0));
+  float occupied = 1.0 - step(0.5, distance(mod(cell, 2.0), particleCell));
+  grain *= occupied;
 
-  color *= 1.0 + grain * uNoise * (-1.0 + uDepth + luma(color) * 0.75);
+  color *= vec3(1.0) + grain * uNoise * (-1.0 + uDepth + luma(color) * 0.75);
 
   gl_FragColor = vec4(color, 1.0);
 }
@@ -126,10 +137,12 @@ export default function FilmGrainBackground() {
     const uPage = uniform('uPage');
     const uTop = uniform('uTop');
     const uDpr = uniform('uDpr');
+    const uNoiseHeight = uniform('uNoiseHeight');
     const uImageSize = uniform('uImageSize');
     const uTime = uniform('uTime');
     gl.uniform1f(uniform('uNoise'), NOISE_INTENSITY);
     gl.uniform1f(uniform('uDepth'), NOISE_SHADOW);
+    gl.uniform1f(uNoiseHeight, NOISE_HEIGHT);
     gl.uniform1f(uniform('uScale'), NOISE_SCALE);
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

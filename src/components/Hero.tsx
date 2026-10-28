@@ -15,15 +15,15 @@ export default function Hero() {
         <img
           src="/images/lettering-text.png"
           alt={t('home.nickname')}
-          className="mx-auto mb-2 block h-auto"
-          style={{ width: 'min(692px, 100%)', transform: 'translateX(8px)' }}
+          className="mx-auto mb-2 mt-2.5 block h-auto"
+          style={{ width: 'min(692px, 100%)', transform: 'translateX(-1px)' }}
         />
 
         <h1 className="text-glow font-display text-5xl md:text-7xl font-bold text-white mb-4">
           {t('home.title')}
         </h1>
 
-        <p className="text-xl md:text-2xl text-dark-300 max-w-3xl mx-auto">
+        <p className="text-glow text-xl md:text-2xl text-dark-300 max-w-3xl mx-auto">
           {t('home.subtitle')}
         </p>
 
@@ -31,7 +31,7 @@ export default function Hero() {
           src="/images/lettering-stroke.png"
           alt=""
           aria-hidden="true"
-          className="mx-auto mt-2 block h-auto"
+          className="mx-auto mt-[13px] block h-auto"
           style={{ width: 'min(395px, 70%)', transform: 'translateX(11px)' }}
         />
 

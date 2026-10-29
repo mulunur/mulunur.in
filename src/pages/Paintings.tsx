@@ -56,10 +56,10 @@ export default function Paintings() {
         <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="font-display fs-title fw-bold mb-4">
               {paintingsData.title}
             </h1>
-            {/* <p className="text-dark-300 text-lg">
+            {/* <p className="fs-lg">
               {paintingsData.subtitle}
             </p> */}
           </div>
@@ -72,7 +72,7 @@ export default function Paintings() {
                 className="flex flex-col items-center"
               >
                 {/* Painting Image with Shadow */}
-                <div className="w-full mb-4 overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                <div className="paint-frame w-full mb-4 overflow-hidden">
                   <img
                     src={painting.path}
                     alt={painting.name}
@@ -82,7 +82,7 @@ export default function Paintings() {
                 </div>
 
                 {/* Painting Name */}
-                <h3 className="text-xl text-center text-dark-100">
+                <h3 className="fs-xl text-center">
                   {painting.name}
                 </h3>
               </div>

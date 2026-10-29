@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import BouncingYuzu from './components/BouncingYuzu';
 import FilmGrainBackground from './components/FilmGrainBackground';
+import FilmGrainOverlay from './components/FilmGrainOverlay';
 import PoemsModal, { getRandomPoem } from './components/PoemsModal';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -23,10 +24,11 @@ function AppContent() {
 
   return (
     <div
-      className="relative bg-dark-900 text-dark-100 min-h-screen flex flex-col cursor-pointer"
+      className="relative min-h-screen flex flex-col cursor-pointer"
       onClick={changeColor}
     >
       <FilmGrainBackground />
+      <FilmGrainOverlay />
 
       {/* Content above background/noise */}
       <div className="relative z-10 flex flex-col flex-1">

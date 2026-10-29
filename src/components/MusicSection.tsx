@@ -76,18 +76,18 @@ export default function MusicSection() {
   };
 
   return (
-    <section className="flex items-center justify-center bg-dark-800">
+    <section className="flex items-center justify-center">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display fs-title fw-bold mb-4">
             {musicData.title}
           </h2>
-          <p className="text-dark-300 text-lg mb-4">
+          <p className="fs-lg mb-4">
             {musicData.subtitle}
           </p>
-          <div className="inline-block px-4 py-2 bg-primary-600/20 border border-primary-500/30 rounded">
-            <p className="text-primary-400 font-semibold">
+          <div className="chip inline-block px-4 py-2">
+            <p className="fw-semibold">
               {musicData.album}
             </p>
           </div>
@@ -100,13 +100,13 @@ export default function MusicSection() {
           {staticTracks.map((track: Track, index: number) => (
             <div
               key={index}
-              className="p-6 bg-dark-900 rounded-lg border border-dark-700 hover:border-primary-500/50 transition-all"
+              className="box p-6"
             >
               <div className="flex items-center gap-4">
                 {/* Play Button */}
                 <button
                   onClick={() => handlePlay(index)}
-                  className="flex-shrink-0 w-12 h-12 bg-primary-600 hover:bg-primary-700 rounded-full flex items-center justify-center transition-colors"
+                  className="flex-shrink-0 w-12 h-12 round-full flex items-center justify-center"
                 >
                   {playing === index ? (
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -121,17 +121,17 @@ export default function MusicSection() {
 
                 {/* Track Info */}
                 <div className="flex-1">
-                  <h4 className="text-lg font-semibold">
+                  <h4 className="fs-lg fw-semibold">
                     {track.name}
                   </h4>
-                  <p className="text-dark-400 text-sm">
+                  <p className="fs-sm">
                     mulünur
                   </p>
                 </div>
 
                 {/* Time Info */}
                 {playing === index && (
-                  <div className="text-sm text-dark-400">
+                  <div className="fs-sm">
                     {formatTime(currentTime)} / {formatTime(duration || 0)}
                   </div>
                 )}
@@ -150,9 +150,9 @@ export default function MusicSection() {
 
               {/* Progress Bar */}
               {playing === index && (
-                <div className="mt-4 h-1 bg-dark-700 rounded-full overflow-hidden cursor-pointer">
+                <div className="mt-4 h-1 round-full overflow-hidden cursor-pointer">
                   <div 
-                    className="h-full bg-primary-500 transition-all" 
+                    className="h-full" 
                     style={{ width: `${getProgressPercentage()}%` }} 
                   />
                 </div>

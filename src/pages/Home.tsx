@@ -1,6 +1,6 @@
 import Hero from '../components/Hero';
 import AboutCard from '../components/AboutCard';
-import SkillsList from '../components/SkillsList';
+import Interests from '../components/Interests';
 import PortfolioGrid from '../components/PortfolioGrid';
 import MusicSection from '../components/MusicSection';
 
@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <Hero />
       <AboutCard />
-      <SkillsList />
+      <Interests />
       <MusicSection />
       <PortfolioGrid />
     </main>

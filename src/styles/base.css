@@ -1,0 +1,72 @@
+/* Page-wide defaults: colors, fonts, selection, scrollbar. */
+
+:root {
+  /* Changes on every click (see ColorContext); everything reads it. */
+  --text-color: #000000;
+
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Shadows (same values Tailwind's shadow-lg / xl / 2xl used). */
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  /* Boxes with text: border width and corner radius. */
+  --border-width: 1px;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.9rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: lab(100% 0.01 -0.01);
+  color: var(--text-color);
+}
+
+/* Every text and border takes the current click color. */
+body, body * {
+  color: var(--text-color) !important;
+  border-color: var(--text-color) !important;
+}
+
+::selection {
+  background-color: #008c38db;
+  color: #ffffff;
+}
+
+a, button {
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7e1fff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6d00e6;
+}
+
+/* Cards and containers get a gap below them. */
+div.box,
+div.chip,
+div.poem-box,
+.timeline-line,
+section[class*="space-y"] > div,
+.space-y-4 > div {
+  margin-bottom: 1.25rem;
+}

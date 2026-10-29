@@ -85,16 +85,12 @@ export default function BouncingYuzu({ onYuzuClick }: BouncingYuzuProps) {
     >
       <div
         ref={yuzuRef}
-        className="drop-shadow-2xl will-change-transform"
-        style={{ position: 'absolute', left: 0, top: 0, transform: 'translate3d(40px, 0px, 0)' }}
+        className="yuzu"
       >
         <img
           src="/images/yuzu.png"
           alt="yuzu"
-          className="w-20 h-20 object-contain select-none cursor-pointer pointer-events-auto hover:brightness-110 transition-all"
-          style={{
-            filter: 'drop-shadow(0 5px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2))',
-          }}
+          className="yuzu-img w-20 h-20 object-contain select-none cursor-pointer pointer-events-auto"
           onClick={handleYuzuClick}
         />
       </div>

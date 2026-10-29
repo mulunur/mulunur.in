@@ -4,30 +4,30 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="relative bg-dark-900 border-t border-dark-700 backdrop-blur-sm mt-20">
+    <footer className="site-footer">
       <div className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
           {/* Brand */}
           <div>
-            <h3 className="font-logo text-xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
+            <h3 className="font-logo fs-xl fw-bold">
               mulünur
             </h3>
-            <p className="mt-2 text-dark-400 text-sm">
+            <p className="mt-2 fs-sm">
               {t('footer.brandDescription')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-dark-200 font-semibold mb-4">{t('nav.home')}</h4>
-            <ul className="space-y-2 text-sm text-dark-400">
+            <h4 className="fw-semibold mb-4">{t('nav.home')}</h4>
+            <ul className="space-y-2 fs-sm">
               <li>
-                <a href="/" className="hover:text-primary-400 transition-colors">
+                <a href="/">
                   {t('nav.portfolio')}
                 </a>
               </li>
               <li>
-                <a href="/music" className="hover:text-primary-400 transition-colors">
+                <a href="/music">
                   {t('nav.music')}
                 </a>
               </li>
@@ -37,14 +37,14 @@ export default function Footer() {
           {/* Social Links */}
           <div className='grid grid-cols-2'>
             <div>
-            <h4 className="text-dark-200 font-semibold mb-4">{t('footer.links.github')}</h4>
-            <ul className="space-y-2 text-sm text-dark-400">
+            <h4 className="fw-semibold mb-4">{t('footer.links.github')}</h4>
+            <ul className="space-y-2 fs-sm">
               <li>
                 <a
                   href="https://github.com/mulunur"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary-400 transition-colors"
+                 
                 >
                   {t('footer.links.github')}
                 </a>
@@ -53,14 +53,14 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-dark-200 font-semibold mb-4">{t('footer.links.telegram')}</h4>
-            <ul className="space-y-2 text-sm text-dark-400">
+            <h4 className="fw-semibold mb-4">{t('footer.links.telegram')}</h4>
+            <ul className="space-y-2 fs-sm">
               <li>
                 <a
                   href="https://t.me/anthropocene_angel"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary-400 transition-colors"
+                 
                 >
                   {t('footer.links.telegram')}
                 </a>
@@ -70,13 +70,13 @@ export default function Footer() {
         </div>
           </div>
 
-        {/* <div className="border-t border-dark-700 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-dark-400">
+        {/* <div className="border-t pt-8 flex flex-col md:flex-row items-center justify-between fs-sm">
           <p>{t('footer.copyright')}</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-primary-400 transition-colors">
+            <a href="#">
               Privacy
             </a>
-            <a href="#" className="hover:text-primary-400 transition-colors">
+            <a href="#">
               Terms
             </a>
           </div>

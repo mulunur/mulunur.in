@@ -1,0 +1,68 @@
+/* Typography: fonts, type scale, weights. */
+
+.font-display,
+.font-logo,
+.poem {
+  font-family: var(--font-mono);
+}
+
+/* Monospace headings look loose, so pull the letters slightly closer. */
+h1, h2, h3, .font-display {
+  letter-spacing: -0.03em;
+}
+
+/* Soft white glow shared by the ticker, the hero name and all headings. */
+.ticker-item,
+.text-glow,
+h1,
+h2,
+h3 {
+  text-shadow:
+    0 0 50px rgba(255, 255, 255, 0.45),
+    0 0 20px rgba(255, 255, 255, 0.35),
+    0 0 32px rgba(255, 255, 255, 0.2);
+}
+
+/* Type scale: font-size and line-height together (same values Tailwind used). */
+.fs-xs { font-size: 0.75rem; line-height: 1.3333; }
+.fs-sm { font-size: 0.875rem; line-height: 1.4286; }
+.fs-lg { font-size: 1.125rem; line-height: 1.5556; }
+.fs-xl { font-size: 1.25rem; line-height: 1.4; }
+.fs-2xl { font-size: 1.5rem; line-height: 1.3333; }
+.fs-3xl { font-size: 1.875rem; line-height: 1.2; }
+.fs-4xl { font-size: 2.25rem; line-height: 1.1111; }
+
+/* Page and section titles: 4xl on phones, 5xl from 48rem up. */
+.fs-title { font-size: 2.25rem; line-height: 1.1111; }
+
+@media (min-width: 48rem) {
+  .fs-title { font-size: 2.5rem; line-height: 1; }
+}
+
+/* Line height override; keep it below the type scale so it wins. */
+.lh-relaxed { line-height: 1.625; }
+
+/* Weights. */
+.fw-medium { font-weight: 500; }
+.fw-semibold { font-weight: 600; }
+.fw-bold { font-weight: 100; }
+
+/* Small caps-style label above a name (artist card). */
+.kicker {
+  font-size: 0.75rem;
+  line-height: 1.3333;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* Link with an underline that fades on hover (Interests). */
+.text-link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text-link:hover {
+  opacity: 0.7;
+}

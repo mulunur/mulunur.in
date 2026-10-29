@@ -67,19 +67,19 @@ export default function PoemsModal({ isOpen, onClose, poem }: PoemsModalProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-auto">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/30"
+        className="modal-overlay absolute inset-0"
         onClick={onClose}
       />
 
       {/* Modal */}
       <div
-        className="backdrop-blur relative w-66 h-64 border-4 border-blue-600 shadow-2xl flex flex-col items-center justify-center gap-4 p-6"
+        className="poem-box relative w-66 h-64 flex flex-col items-center justify-center gap-4 p-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-white hover:bg-blue-600 rounded transition-colors"
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center modal-close"
           aria-label="Close"
         >
           <svg
@@ -98,11 +98,8 @@ export default function PoemsModal({ isOpen, onClose, poem }: PoemsModalProps) {
         </button>
 
         {/* Poem Text */}
-        <div className="text-white text-center leading-relaxed overflow-auto max-h-64">
-          <pre
-            className="font-mono text-sm whitespace-pre-wrap"
-            style={{ fontFamily: 'Consolas, "Courier New", monospace' }}
-          >
+        <div className="text-center lh-relaxed overflow-auto max-h-64">
+          <pre className="poem fs-sm whitespace-pre-wrap">
             {poem}
           </pre>
         </div>

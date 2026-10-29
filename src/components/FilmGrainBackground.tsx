@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+// Keep in sync with .site-bg in index.css.
 const BACKGROUND_SRC = '/images/site-bg.png';
 
 // Tuning for a fine, calm grain.
@@ -8,11 +9,11 @@ const BACKGROUND_SRC = '/images/site-bg.png';
 // - NOISE_SPEED: how fast the grain evolves (units of noise space per second);
 //   the grain morphs smoothly instead of flickering frame to frame.
 // - MAX_DPR: grain is drawn per device pixel, so retina screens get finer grain.
-const NOISE_INTENSITY = 0.45;
+const NOISE_INTENSITY = 0.65;
 const NOISE_SHADOW = 0.0;
 const NOISE_SPEED = 2.50;
 // Grain width: 1 = one device pixel per grain, smaller = coarser grain.
-const NOISE_SCALE = 0.8;
+const NOISE_SCALE = 0.2;
 const NOISE_HEIGHT = 3;
 const MAX_FPS = 30;
 const MAX_DPR = 2;
@@ -199,7 +200,7 @@ export default function FilmGrainBackground() {
       gl.uniform2f(uImageSize, image.naturalWidth, image.naturalHeight);
       ready = true;
       resize();
-      canvas.style.opacity = '1';
+      canvas.classList.add('is-ready');
       if (!reducedMotion) frame = requestAnimationFrame(tick);
     };
     image.src = BACKGROUND_SRC;
@@ -221,13 +222,10 @@ export default function FilmGrainBackground() {
 
   return (
     <div className="absolute inset-0 z-0" aria-hidden="true">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${BACKGROUND_SRC}')` }}
-      />
+      <div className="site-bg absolute inset-0 bg-cover bg-center" />
       <canvas
         ref={canvasRef}
-        className="pointer-events-none fixed inset-0 h-full w-full opacity-0"
+        className="grain-canvas pointer-events-none fixed inset-0 h-full w-full"
       />
     </div>
   );

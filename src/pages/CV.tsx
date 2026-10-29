@@ -27,7 +27,7 @@ export default function CV() {
             <a
               href={cvFile}
               download={cvFileName}
-              className="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors whitespace-nowrap"
+              className="px-6 py-3 round-md fw-medium whitespace-nowrap"
             >
               {t('cv.downloadLabel')}
             </a>
@@ -38,7 +38,7 @@ export default function CV() {
             <img
               src={cvImage}
               alt={t('cv.title')}
-              className="shadow-lg w-166 h-auto"
+              className="cv-image w-166 h-auto"
               loading="lazy"
             />
           </div>

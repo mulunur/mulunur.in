@@ -14,7 +14,7 @@ export default function Header() {
   };
 
   const isActive = (path: string) => location.pathname === path;
-  const tickerText = t('ticker.text');
+  // const tickerText = t('ticker.text');
 
   const navLinks = [
     { path: '/about', label: t('nav.about') },
@@ -25,17 +25,17 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-dark-900/95 backdrop-blur border-b border-dark-900">
+    <header className="site-header">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between gap-x-3 md:gap-x-6">
           <Link
             to="/"
-            className="font-logo text-2xl font-bold bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent"
+            className="font-logo fs-2xl fw-bold"
           >
             mulünur
           </Link>
 
-          {/* Announcement ticker */}
+          {/* Announcement ticker (hidden for now)
           <div className="ticker min-w-0 flex-1" aria-label={tickerText}>
             <div className="ticker-track">
               {[false, true].map((hidden) => (
@@ -50,18 +50,19 @@ export default function Header() {
               ))}
             </div>
           </div>
+          */}
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8 ml-auto">
             {navLinks.map(({ path, label }) => (
               <Link
                 key={path}
                 to={path}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(path)
-                    ? 'text-primary-400'
-                    : 'text-dark-300 hover:text-primary-400'
-                }`}
+                className={`fs-sm fw-medium ${
+ isActive(path)
+ ? ''
+ : ' '
+ }`}
               >
                 {label}
               </Link>
@@ -72,14 +73,14 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <button
               onClick={toggleLanguage}
-              className="px-3 py-1 text-sm font-medium bg-dark-800 hover:bg-dark-700 text-dark-200 rounded transition-colors"
+              className="px-3 py-1 fs-sm fw-medium round-sm"
             >
               {i18n.language === 'en' ? 'RU' : 'EN'}
             </button>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-dark-300"
+              className="md:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,11 +97,11 @@ export default function Header() {
               <Link
                 key={path}
                 to={path}
-                className={`block px-4 py-2 rounded text-sm font-medium transition-colors ${
-                  isActive(path)
-                    ? 'bg-primary-600/20 text-primary-400'
-                    : 'text-dark-300 hover:text-primary-400'
-                }`}
+                className={`block px-4 py-2 round-sm fs-sm fw-medium ${
+ isActive(path)
+ ? ' '
+ : ' '
+ }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {label}

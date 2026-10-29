@@ -1,0 +1,61 @@
+/* Home page: name, subtitle, hand-lettering, background, grain and the yuzu. */
+
+/* The home-page name: change its font and size here without touching other headings. */
+.hero-title {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.hero-subtitle { font-size: 1.25rem; line-height: 1.4; }
+
+@media (min-width: 48rem) {
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 1.4rem; line-height: 1; }
+}
+
+/* Hand-lettering PNGs; the offsets nudge each cutout into place. */
+.lettering-text {
+  width: min(692px, 100%);
+  transform: translateX(-1px);
+}
+
+.lettering-stroke {
+  width: min(395px, 70%);
+  transform: translateX(11px);
+}
+
+/* Page background (the same file the film grain shader samples) and the
+   grain canvas, which fades in once its texture has loaded. */
+.site-bg {
+  background-image: url('/images/site-bg.png');
+}
+
+.grain-canvas {
+  opacity: 0;
+}
+
+.grain-canvas.is-ready {
+  opacity: 1;
+}
+
+/* Tiled grain texture drawn over the whole page (see FilmGrainOverlay). */
+.film-grain-overlay {
+  mix-blend-mode: overlay;
+  opacity: 1;
+  filter: saturate(1.15);
+}
+
+/* Bouncing yuzu: the script drives transform every frame; these are the static parts. */
+.yuzu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate3d(40px, 0px, 0);
+  will-change: transform;
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+}
+
+.yuzu-img {
+  filter: drop-shadow(0 5px 25px rgba(0, 0, 0, 0.3)) drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+}

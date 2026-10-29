@@ -17,7 +17,7 @@
   },
   "home": {
     "moto": "Welcome to my portfolio!",
-    "title": "♡ taya",
+    "title": "♡ Taya",
     "nickname": "mulünur",
     "subtitle": "Programmer · Musician",
     "cta": "Explore My Work"
@@ -26,7 +26,7 @@
     "title": "About Me",
     "journey": "Journey",
     "interestsLabel": "interests:",
-    "interests": ["computers", "software architecture", "music", "fashion", "philosophy", "theology", "opera", "art", "books", "the computability problem", "learning"],
+    "interests": ["computers", "software architecture", "custom", "music", "fashion", "philosophy", "theology", "opera", "art", "books", "the computability problem", "learning"],
     "playlists": "Listen to my playlists",
     "timeline": [
       { "year": "2006", "title": "Started at age 5", "desc": "Vocal and choir lessons at music school"},
@@ -40,19 +40,6 @@
     ]
   },
   "skills": {
-    "title": "Skills & Expertise",
-    "programming": {
-      "title": "Programming",
-      "items": ["Python", "C++", "TypeScript / JavaScript", "React, React Native", "Node.js", ".NET, ASP.NET", "PostgreSQL & other DBs", "DevOps", "AI Agent Systems"]
-    },
-    "design": {
-      "title": "3D & Design",
-      "items": ["3D Modeling", "Generative Art", "Visual Design"]
-    },
-    "music": {
-      "title": "Music",
-      "items": ["Jazz Piano", "Electric Guitar", "Music Production", "Composition"]
-    },
     "technologicalStack": "Technological Stack",
     "techStack": [
       "Python", "C++", ".NET, ASP.NET", "TypeScript", "React, React Native",

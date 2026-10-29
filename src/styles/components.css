@@ -1,0 +1,96 @@
+/* Boxes, buttons and other pieces with their own look.
+   Border color always comes from the global click-color rule in base.css. */
+
+/* Borders and corners (sizes are set by the variables in base.css). */
+.box,
+.box-featured,
+.pill,
+.chip,
+.poem-box {
+  border-style: solid;
+  border-width: var(--border-width);
+}
+
+.box { border-radius: var(--radius-md); }            /* cards and tiles */
+.box-featured {                                      /* artist card */
+  border-width: 1.5px;
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+}
+.pill { border-radius: 9999px; }                     /* link pills */
+.chip { border-radius: var(--radius-sm); }           /* small tags and badges */
+
+.round-sm { border-radius: var(--radius-sm); }       /* corners without a border */
+.round-md { border-radius: var(--radius-md); }
+.round-full { border-radius: 9999px; }
+
+.pill:hover {
+  background-color: rgb(0 0 0 / 0.1);
+}
+
+/* Latest-single card on the Music page. */
+.single-card {
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-lg);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.single-card:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+.single-cover {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.single-cover:hover {
+  transform: scale(1.05);
+}
+
+/* Streaming buttons next to the latest single. */
+.btn-green,
+.btn-yellow,
+.btn-orange {
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(8px);
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-green { background-color: oklch(62.7% 0.194 149.214 / 0.8); }
+.btn-green:hover { background-color: oklch(62.7% 0.194 149.214); }
+
+.btn-yellow { background-color: oklch(79.5% 0.184 86.047 / 0.9); }
+.btn-yellow:hover { background-color: oklch(68.1% 0.162 75.834); }
+
+.btn-orange { background-color: oklch(64.6% 0.222 41.116 / 0.8); }
+
+/* Poems modal. */
+.poem-box {
+  border-width: 4px;
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.modal-overlay {
+  background-color: rgb(0 0 0 / 0.3);
+}
+
+.modal-close {
+  border-radius: var(--radius-sm);
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover {
+  background-color: oklch(54.6% 0.245 262.881);
+}
+
+/* Images with a shadow. */
+.paint-frame { box-shadow: var(--shadow-2xl); }
+.cv-image { box-shadow: var(--shadow-lg); }
+
+/* Vertical line down the left side of the timeline on About. */
+.timeline-line {
+  border-left: 2px solid;
+}
